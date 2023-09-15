@@ -58,8 +58,6 @@ cnf['TAIGA']['PRIORITIES']  = taiga_cnf['priorities']
 cnf['TAIGA']['SEVERITIES']  = taiga_cnf['severities']
 cnf['TAIGA']['TAG_COLORS']  = taiga_cnf['tags_colors']
 
-
-
 let people = {}
 let people_map = {}
 
@@ -90,6 +88,8 @@ ignore_tickets.push(cnf['REPORT']['HEADER_ISSUE_NO'])
 
 
 let sub_keys = cnf['TABLE_COLS']
+
+let dflt = cnf['DEFAULT']
 
 let datacenters = cnf['DATA_CENTERS']
 // console.log(JSON.stringify(datacenters, null, 2))
@@ -139,6 +139,8 @@ for (t in tags_colors) {
   tags_map[tags_colors[t][0]] = tags_colors[t][1]
 }
 
+// console.log(JSON.stringify(tags_colors, null, 2))
+// console.log(JSON.stringify(tags_map, null, 2))
 
 // for (dc in datacenters) {
 //   report_json[dc] = {}
@@ -168,6 +170,7 @@ for (i in issues) {
   let tags = issues[i]['tags'].split(',')
   let datacenter = []
   let service_area = []
+  let other_tag = []
   let new_tags = []
   let type = []
   type.push(issues[i]['type'])
@@ -178,18 +181,31 @@ for (i in issues) {
       datacenter.push(tags[t])
     }
 
+    // if (datacenter.length == 0) { datacenter.push(dflt['DATA_CENTER']) }
+
     // Service Area
     if (service_areas.hasOwnProperty(tags[t])) {
       service_area.push(tags[t])
     }
+    // if (service_area.length == 0) { service_area.push(dflt['SERVICE_AREA']) }
+
+    // Other Tags
+    if (other_tags.hasOwnProperty(tags[t])) {
+      other_tag.push(tags[t])
+    }
   }
 
   for (t in tags) {
-    if(!datacenter.includes(tags[t]) && !service_area.includes(tags[t])) {
+    if((!datacenter.includes(tags[t]) && !service_area.includes(tags[t]) && tags[t]!='') || other_tag.hasOwnProperty(tags[t])) {
       new_tags.push(tags[t])
       ntags[tags[t]] = true
     }
   }
+
+  // console.log("OTHER TAGS")
+  // console.log(JSON.stringify(other_tags, null, 2))
+  // console.log(JSON.stringify(other_tag, null, 2))
+  // console.log(JSON.stringify(ntags, null, 2))
 
   issues[i]['dc'] = datacenter
   issues[i]['sa'] = service_area
@@ -440,6 +456,11 @@ report_md += "\n"
 // let json_issues_table = issues_to_json_table(issues)
 report_md += "\n"
 report_md += '# Activity' + "\n"
+report_md += "\n"
+report_md += "**This active report summarizes Highlights, Closed, New, Active and Idle issues for the week.**\n"
+report_md += "- For access to issue details please contact <a href='mailto:jehaverlack@alaska.edu'>jehaverlack@alaska.edu</a>\n"
+report_md += "\n"
+
 // report_md += "\n"
 // report_md += json_to_md_table(json_issues_table)
 // report_md += "\n"
@@ -449,30 +470,36 @@ let legend_table = []
 // legend_table.push(ltval)
 
 let ltval = {}
-ltval['Legend'] = "Data Centers"
+ltval['Legend'] = "Projects"
 ltval['Values'] = ''
 for (k in datacenters) {
-  ltval['Values'] += '<span style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_map[k] + '">' + k + '</span>' + ' <span style="color: ' + tags_map[k] + '">' + datacenters[k] + '</span>, '
+  ltval['Values'] += '<span title="' + datacenters[k] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[k] + '">' + k + '</span> '
+  // ltval['Values'] += '<span style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_map[k] + '">' + k + '</span>' + ' <span style="color: ' + tags_map[k] + '">' + datacenters[k] + '</span>, '
   // ltval['Values'] += '<span style="color: ' + tags_map[k] + '">' + datacenters[k] + '</span>, '
 }
 ltval['Values'] = ltval['Values'].replace(RegExp(', $'), '')
 legend_table.push(ltval)
 
 ltval = {}
-ltval['Legend'] = "Service Areas"
+ltval['Legend'] = "Departments"
 ltval['Values'] = ''
 for (k in service_areas) {
-  ltval['Values'] += '<span style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_map[k] + '">' + k + '</span>' + ' <span style="color: ' + tags_map[k] + '">' + service_areas[k] + '</span>, '
+  ltval['Values'] += '<span title="' + service_areas[k] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[k] + '">' + k + '</span> '
+
+  // ltval['Values'] += '<span style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_map[k] + '">' + k + '</span>' + ' <span style="color: ' + tags_map[k] + '">' + service_areas[k] + '</span>, '
   // ltval['Values'] += '<span style="color: ' + tags_map[k] + '">' + service_areas[k] + '</span>, '
 }
 ltval['Values'] = ltval['Values'].replace(RegExp(', $'), '')
 legend_table.push(ltval)
 
 ltval = {}
-ltval['Legend'] = "Labels"
+ltval['Legend'] = "Tags"
 ltval['Values'] = ''
-for (k in ntags) {
-  ltval['Values'] += '<span style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_map[k] + '">' + k + '</span>' + ' <span style="color: ' + tags_map[k] + '">' + other_tags[k] + '</span>, '
+// for (k in ntags) {
+  for (k in other_tags) {
+  ltval['Values'] += '<span title="' + other_tags[k] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[k] + '">' + k + '</span> '
+
+  // ltval['Values'] += '<span style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_map[k] + '">' + k + '</span>' + ' <span style="color: ' + tags_map[k] + '">' + other_tags[k] + '</span>, '
   // ltval['Values'] += '<span style="color: ' + tags_map[k] + '">' + k + '</span>, '
 }
 ltval['Values'] = ltval['Values'].replace(RegExp(', $'), '')
@@ -541,6 +568,34 @@ report_md += json_to_md_table(legend_table)
 // }
 
 
+// Weekly Highlights
+let highlights = []
+let highlight_severities = ['Important', 'Critical']
+let highlight_priority = ['High', 'Urgent']
+for (i in issues) {
+  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO']) {
+    if (highlight_severities.includes( issues[i]['severity'] ) || highlight_severities.includes( issues[i]['priority'] )) {
+      highlights.push(issues[i])
+    }
+  }
+}
+
+let highlights_table = issues_to_json_table(highlights)
+// console.log(JSON.stringify(highlights_table, null, 2))
+report_md += "---\n"
+// report_md += '## Weekly Highlights' + "\n"
+report_md += '<h2 style="background-color: #ff0;">Weekly Highlight Summary</h2>' + "\n"
+if (highlights_table.length > 0) {
+  report_md += highlights_table.length + " May 2023 Priority Issues.\n"
+  report_md += "\n"
+  report_md += json_to_md_table(highlights_table)
+  report_md += "\n"
+} else {
+  report_md += "\n"
+  report_md += "- No issues were **May 2023 Priority** issues.\n"
+}
+
+// Closed
 
 let closed_issues = []
 for (i in issues) {
@@ -586,7 +641,7 @@ if (new_issues.length > 0) {
   report_md += "---\n"
   report_md += '## New Issues' + "\n"
   if (new_issues_table.length > 0) {
-    report_md += new_issues_table.length + " issues **Requested** this week.\n"
+    report_md += new_issues_table.length + " issues **Added** this week.\n"
     report_md += "\n"
     report_md += json_to_md_table(new_issues_table)
     report_md += "\n"
@@ -737,6 +792,8 @@ function json_to_md_table(json_table) {
 
 // Function Libraryies
 function issues_to_json_table(issues) {
+  // console.log('issues')
+  // console.log(JSON.stringify(issues, null, 2))
   let json_table = []
 
   let id_dc_map = [];
@@ -783,6 +840,7 @@ function issues_to_json_table(issues) {
   });
 
   // console.log('Sorting:....')
+  // console.log('id_dc_map')
   // console.log(JSON.stringify(id_dc_map, null, 2))
   // console.log(JSON.stringify(id_dc_map_sorted, null, 2))
 
@@ -807,21 +865,27 @@ function issues_to_json_table(issues) {
           case 'dc':
             let dcs = ''
             for (dc in issues[i][k]) {
-               dcs += '<span style="color: ' + tags_map[ issues[i][k][dc] ] + '">' + datacenters[ issues[i][k][dc] ] + '</span> '
+               // dcs += '<span style="color: ' + tags_map[ issues[i][k][dc] ] + '">' + datacenters[ issues[i][k][dc] ] + '</span> '
+
+               dcs += '<span title="' + datacenters[ issues[i][k][dc] ] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[issues[i][k][dc]] + '">' + issues[i][k][dc] + '</span>'
             }
             row[sub_keys[k]] = dcs
             break;
           case 'sa':
             let sas = ''
             for (sa in issues[i][k]) {
-               sas += '<span style="color: ' + tags_map[ issues[i][k][sa] ] + '">' + service_areas[ issues[i][k][sa] ] + '</span> '
+               // sas += '<span style="color: ' + tags_map[ issues[i][k][sa] ] + '">' + service_areas[ issues[i][k][sa] ] + '</span> '
+
+               sas += '<span title="' + service_areas[ issues[i][k][sa] ] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[issues[i][k][sa]] + '">' + issues[i][k][sa] + '</span>'
             }
             row[sub_keys[k]] = sas
             break;
           case 'labels':
             let lbl = ''
             for (l in issues[i][k]) {
-               lbl += '<span style="color: ' + tags_map[ issues[i][k][l] ] + '">' + issues[i][k][l] + '</span> '
+               // lbl += '<span style="color: ' + tags_map[ issues[i][k][l] ] + '">' + issues[i][k][l] + '</span> '
+
+               lbl += '<span title="' + other_tags[ issues[i][k][l] ] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[issues[i][k][l]] + '">' + issues[i][k][l] + '</span>'
             }
             row[sub_keys[k]] = lbl
             break;          case 'priority':

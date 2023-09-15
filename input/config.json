@@ -29,32 +29,45 @@
     "subject": "Subject",
     "dc": "Project",
     "sa": "Department",
-    "type": "Type",
     "labels": "Tags",
+    "type": "Type",
     "priority": "Priority",
     "status": "Status",
     "assigned_to": "Assigned to",
     "latency": "Latency",
     "due_date": "Due Date"
   },
+  "DEFAULT": {
+    "DATA_CENTER":"acep",
+    "SERVICE_AREA":"infosec"
+  },
   "DATA_CENTERS":{
     "acep": "Alaska Center for Energy and Power",
-    "arctic":"Alaska Regional Collaboration for Technology Innovation and Commercialization"
+    "arctic":"Alaska Regional Collaboration for Technology Innovation and Commercialization",
+    "abec":"Alaska Blue Economy Center",
+    "ice":"Alaska Center for Innovation, Commercialization, and Entrepreneurship",
+    "ced":"Center for Economic Development",
+    "reap":"Renewable Energy Alaska Project",
+    "t3":"Teaching Through Technology",
+    "riseup":"RISE UP"
   },
   "SERVICE_AREAS": {
-    "ci": "Cyberinfrastructure",
-    "cs": "Cybersecurity",
-    "is": "Infomation Security",
+    "infosec": "Infomation Security",
     "devops":"DevOps",
     "data": "Data Team",
     "hr":"Human Resources",
+    "oit": "UA Office of Information Technology",
     "research": "Research Support",
     "web": "Web Team"
   },
   "OTHER_TAGS": {
-    "oit": "UA Office of Information Technology",
-    "sbx": "Sandbox",
+    "ci": "Cyberinfrastructure",
+    "it":"Information Technology",
+    "dt":"End User Desktops",
+    "ot":"Operational Technology",
+    "itsm": "Information Techonology Service Management",
     "sddc": "Software Defined Data Center",
-    "travel": "Travel"
+    "travel": "Travel",
+    "sbx": "Sandbox"
   }
 }

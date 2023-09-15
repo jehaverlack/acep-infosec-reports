@@ -1,0 +1,657 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>CFOS IT Weekly Report</title>
+
+    <style>
+      body {
+        overflow-x: hidden;
+        margin:0px 0px 0px 0px;
+        font-family: Arial,Helvetica,sans-serif;
+        font-size: 0.75rem;
+        color: #1e5c8d;
+        background-color: #ffffff;
+      }
+
+      /* Banner */
+      #banner {
+          background-color: #1e5c8d;
+          color: #ffffff;
+          /* margin-top: 46px; */
+          /* margin-left: -15px; */
+          /* margin-right: -15px; */
+      }
+
+      #banner a {
+          color: #ffffff;
+          text-decoration:none;
+      }
+
+
+      /* UAF Banner Bar */
+      #banner-bar {
+        background-color: #1e5c8d;
+        color: #ffffff;
+        margin-top: 0px;
+        font-size: 1.4em;
+        //border: 1px solid #000099;
+      }
+
+      #banner-bar a {
+        color: #ffffff;
+      }
+
+      #banner-logo-img {
+        max-height: 150px;
+      }
+
+      #banner-logo-img-uafpng {
+        max-height: 30px;
+        //border: 1px solid #060;
+      }
+
+      #banner-logo-img-uaftxt {
+        position: relative;
+        max-height: 20px;
+        left: 10px;
+        //border: 1px solid #060;
+      }
+
+      #banner-search {
+        float: right;
+        top: 3px;
+        max-width: 280px;
+        //border: 1px solid #006;
+      }
+
+      #uasearch {
+        background-color: #1b4376;
+        color: #ddd;
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        min-height: 35px;
+        border: 0px;
+        padding: 0px;
+        float: right;
+      }
+
+      #uasubmit {
+        background-color: #1b4376;
+        color: #ddd;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        min-height: 35px;
+        border: 0px;
+        float: right;
+      }
+
+
+      /* CFOS Banner Logo */
+      #banner-logo {
+        //postion: relative;
+        //padding: 2rem;
+        text-align: center;
+        //top: 5px;
+        background: #003764;
+        /* background: #1e5c8d url("../img/uaf/naturally-inspiring-theme/bgHeader.jpg") no-repeat scroll 0 0 / cover; */
+      }
+
+      #banner-logo img {
+        margin: auto;
+        //width: 20%;
+        max-height: 60px;
+        text-align: center;
+        //border: 1px solid #990000;
+      }
+
+      #banner-logo div {
+        color: #ffffff;
+        font-weight: 200;
+        padding: 0.2rem 0;
+        //border: 1px solid #009900;
+      }
+
+      #banner-logo .cfostitle {
+        /* font-size: 1.2em; */
+        font-weight: bold;
+        text-align: left;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        //border: 1px solid #990000;
+      }
+
+      #banner-logo .uaftitle {
+        font-size: 1rem;
+        text-align: center;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border-top: 1px solid;
+        width: 40%;
+        margin: auto;
+        //border: 1px solid #990000;
+      }
+
+      /*
+      #banner-logo a, .cfosLogo a:link, .cfosLogo a:visited {
+        color: white;
+        text-decoration: none;
+      }
+
+      #banner-logo a:hover {
+        opacity: 0.8;
+      }
+      */
+
+
+      #banner-title {
+        font-weight: bold;
+      }
+
+
+      #banner-content {
+        color: #095F94;
+        font-weight: bold;
+        position: relative;
+        background: #1e5c8d url("../img/uaf/naturally-inspiring-theme/texture-bar.jpg") no-repeat scroll 0 0 / cover;
+        //float: right;
+        font-size: 1.5em;
+        //margin-left: inherit;
+        padding: 5px;
+        margin-top: 0px;
+        margin-left: 15px;
+        width: 100%;
+        //border: 1px solid #990000;
+      }
+
+      #breadcrumbs {
+          background: #1e5c8d url("../img/uaf/naturally-inspiring-theme/texture-bar.jpg") no-repeat scroll 0 0 / cover;
+      }
+
+      #progbar {
+        margin-bottom: 10px;
+      }
+
+      /* Main Content Area */
+
+      #main {
+        margin-left: -70px;
+        margin-right: -70px;
+      }
+
+
+      /* Footer */
+      .footer {
+        background-color: #095F94;
+        color: #fff;
+      }
+
+      .footer a {
+          color: #fff;
+          text-decoration: underline;
+      }
+
+      #footer {
+      //    background-color: #fff;
+          min-height: 20px;
+          margin-top: 20px;
+          font-size: .9em;
+      }
+
+      #footer-copy {
+        float: right;
+      }
+
+      .uaflogo {
+        width: 80px;
+        /* margin-top: 15px;
+        float: right;
+        text-align: right; */
+        //border: 1px solid #990000;
+      }
+
+      .uaflogoftr {
+        width: 100px;
+        /* margin-top: 15px;
+        float: right;
+        text-align: right; */
+        //border: 1px solid #990000;
+      }
+
+      .cfoslogo {
+        height: 80px;
+        width: 80px;
+        text-align: right;
+        float: right;
+        //border: 1px solid #990000;
+      }
+
+      /* Based on Bootstrap Responsive Screen Sizes: http://getbootstrap.com/css/#grid */
+
+      /* Extra small devices Phones (<768px) */
+      @media screen and (max-width: 767px) {
+
+          /* #banner {
+            margin-top: 33px;
+          } */
+
+          #banner-bar { font-size: 1rem; }
+          .uaflogo { width: 60px; }
+
+          #banner-logo-img {
+              max-height: 85px;
+          }
+
+          #banner-logo-img-uafpng {
+            max-height: 20px;
+          }
+
+          #banner-logo-img-uaftxt {
+            max-height: 12px;
+          }
+
+          #uasearch {
+            min-height: 25px;
+            font-size: .5rem;
+          }
+
+          #uasubmit {
+            min-height: 25px;
+            font-size: .5rem;
+          }
+
+      /*
+          #banner-title {
+              font-size: .8em;
+              font-weight: bold;
+              //margin-left: 100px;
+      	      //margin-top: 0px;
+          }ua
+      */
+
+          #banner-logo img {
+            max-height: 40px;
+          }
+
+          #banner-logo div {
+            font-size: 1 em;
+          }
+
+          #banner-logo .cfostitle {
+            font-size: 0.9 em;
+          }
+
+          #banner-logo .uaftitle {
+            font-size: 0.6rem;
+            width: 60%;
+          }
+
+          #banner-content {
+              position: relative;
+              float: right;
+              //margin-top: 65px;
+              margin-bottom: 0px;
+              font-size: 1em;
+          }
+
+          #main {
+            margin-left: 0px;
+            margin-right: 0px;
+          }
+
+          #footer {
+              font-size: 0.7em;
+          }
+      }
+
+      /* Small devices Tablets (≥768px) */
+      @media screen and (min-width: 768px) and (max-width: 991px) {
+
+          /* #banner {
+            margin-top: 33px;
+          } */
+
+          #banner-bar { font-size: 1rem; }
+          .uaflogo { width: 60px; }
+
+          #banner-logo-img {
+              max-height: 100px;
+          }
+
+          #banner-logo-img-uafpng {
+            max-height: 30px;
+          }
+
+          #banner-logo-img-uaftxt {
+            max-height: 20px;
+          }
+
+          #banner-title {
+              font-size: 2em;
+              font-weight: bold;
+              //margin-left: 80px;
+      	      //margin-top: 25px;
+          }
+
+
+          #banner-content {
+              position: relative;
+              float: right;
+              //margin-top: 90px;
+              margin-bottom: 0px;
+              font-size: 1.1em;
+          }
+
+      }
+
+      /* Medium devices Desktops (≥992px) */
+      @media screen and (min-width: 992px) and (max-width: 1199px) {
+
+          /* #banner-bar { font-size: 1rem; } */
+
+          #banner-logo-img {
+              max-height: 130px;
+          }
+
+          #banner-logo-img-uafpng {
+            max-height: 30px;
+          }
+
+          #banner-logo-img-uaftxt {
+            max-height: 20px;
+          }
+
+          #banner-title {
+              font-size: 2.5em;
+              font-weight: bold;
+              //margin-left: 150px;
+      	      //margin-top: 40px;
+          }
+
+
+          #banner-content {
+              position: relative;
+              float: right;
+            //margin-top: 100px;
+              margin-bottom: 0px;
+              font-size: 1.5em;
+          }
+
+          #main {
+            margin-left: 0px;
+            margin-right: 0px;
+          }
+
+      }
+
+      /* Large devices Desktops (≥1200px) */
+      @media screen and (min-width: 1200px) {
+
+          /* #banner-bar { font-size: 1rem; } */
+
+          #banner-logo-img {
+              max-height: 150px;
+          }
+
+          #banner-logo-img-uafpng {
+            max-height: 30px;
+          }
+
+          #banner-logo-img-uaftxt {
+            max-height: 20px;
+          }
+
+
+          #banner-title {
+              font-size: 3em;
+              font-weight: bold;
+              //margin-left: 150px;
+      	      //margin-top: 20px;
+          }
+
+
+          #banner-content {
+              position: relative;
+              float: right;
+              //margin-top: 115px;
+              margin-bottom: 0px;
+              font-size: 1.9em;
+          }
+
+          #main {
+            margin-left: 0px;
+            margin-right: 0px;
+          }
+
+      }
+
+
+      table {
+        caption-side: bottom;
+        border-collapse: collapse;
+      }
+
+      .table {
+        --bs-table-color: var(--bs-body-color);
+        --bs-table-bg: transparent;
+        --bs-table-border-color: var(--bs-border-color);
+        --bs-table-accent-bg: transparent;
+        --bs-table-striped-color: var(--bs-body-color);
+        --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+        --bs-table-active-color: var(--bs-body-color);
+        --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+        --bs-table-hover-color: var(--bs-body-color);
+        --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+        width: 100%;
+        margin-bottom: 1rem;
+        color: var(--bs-table-color);
+        vertical-align: top;
+        border-color: var(--bs-table-border-color);
+      }
+      .table > :not(caption) > * > * {
+        padding: 0.5rem 0.5rem;
+        background-color: var(--bs-table-bg);
+        border-bottom-width: 1px;
+        box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
+      }
+      .table > tbody {
+        vertical-align: inherit;
+      }
+      .table > thead {
+        vertical-align: bottom;
+      }
+
+      .table-group-divider {
+        border-top: 2px solid currentcolor;
+      }
+
+      .caption-top {
+        caption-side: top;
+      }
+
+      .table-sm > :not(caption) > * > * {
+        padding: 0.25rem 0.25rem;
+      }
+
+      .table-bordered > :not(caption) > * {
+        border-width: 1px 0;
+      }
+      .table-bordered > :not(caption) > * > * {
+        border-width: 0 1px;
+      }
+
+      .table-borderless > :not(caption) > * > * {
+        border-bottom-width: 0;
+      }
+      .table-borderless > :not(:first-child) {
+        border-top-width: 0;
+      }
+
+      .table-striped > tbody > tr:nth-of-type(odd) > * {
+        --bs-table-accent-bg: var(--bs-table-striped-bg);
+        color: var(--bs-table-striped-color);
+      }
+
+      .table-striped-columns > :not(caption) > tr > :nth-child(even) {
+        --bs-table-accent-bg: var(--bs-table-striped-bg);
+        color: var(--bs-table-striped-color);
+      }
+
+      .table-active {
+        --bs-table-accent-bg: var(--bs-table-active-bg);
+        color: var(--bs-table-active-color);
+      }
+
+      .table-hover > tbody > tr:hover > * {
+        --bs-table-accent-bg: var(--bs-table-hover-bg);
+        color: var(--bs-table-hover-color);
+      }
+
+      .table-primary {
+        --bs-table-color: #000;
+        --bs-table-bg: #cfe2ff;
+        --bs-table-border-color: #bacbe6;
+        --bs-table-striped-bg: #c5d7f2;
+        --bs-table-striped-color: #000;
+        --bs-table-active-bg: #bacbe6;
+        --bs-table-active-color: #000;
+        --bs-table-hover-bg: #bfd1ec;
+        --bs-table-hover-color: #000;
+        color: var(--bs-table-color);
+        border-color: var(--bs-table-border-color);
+      }
+
+      .table-secondary {
+        --bs-table-color: #000;
+        --bs-table-bg: #e2e3e5;
+        --bs-table-border-color: #cbccce;
+        --bs-table-striped-bg: #d7d8da;
+        --bs-table-striped-color: #000;
+        --bs-table-active-bg: #cbccce;
+        --bs-table-active-color: #000;
+        --bs-table-hover-bg: #d1d2d4;
+        --bs-table-hover-color: #000;
+        color: var(--bs-table-color);
+        border-color: var(--bs-table-border-color);
+      }
+
+      .table-success {
+        --bs-table-color: #000;
+        --bs-table-bg: #d1e7dd;
+        --bs-table-border-color: #bcd0c7;
+        --bs-table-striped-bg: #c7dbd2;
+        --bs-table-striped-color: #000;
+        --bs-table-active-bg: #bcd0c7;
+        --bs-table-active-color: #000;
+        --bs-table-hover-bg: #c1d6cc;
+        --bs-table-hover-color: #000;
+        color: var(--bs-table-color);
+        border-color: var(--bs-table-border-color);
+      }
+
+      .table-info {
+        --bs-table-color: #000;
+        --bs-table-bg: #cff4fc;
+        --bs-table-border-color: #badce3;
+        --bs-table-striped-bg: #c5e8ef;
+        --bs-table-striped-color: #000;
+        --bs-table-active-bg: #badce3;
+        --bs-table-active-color: #000;
+        --bs-table-hover-bg: #bfe2e9;
+        --bs-table-hover-color: #000;
+        color: var(--bs-table-color);
+        border-color: var(--bs-table-border-color);
+      }
+
+      .table-warning {
+        --bs-table-color: #000;
+        --bs-table-bg: #fff3cd;
+        --bs-table-border-color: #e6dbb9;
+        --bs-table-striped-bg: #f2e7c3;
+        --bs-table-striped-color: #000;
+        --bs-table-active-bg: #e6dbb9;
+        --bs-table-active-color: #000;
+        --bs-table-hover-bg: #ece1be;
+        --bs-table-hover-color: #000;
+        color: var(--bs-table-color);
+        border-color: var(--bs-table-border-color);
+      }
+
+      .table-danger {
+        --bs-table-color: #000;
+        --bs-table-bg: #f8d7da;
+        --bs-table-border-color: #dfc2c4;
+        --bs-table-striped-bg: #eccccf;
+        --bs-table-striped-color: #000;
+        --bs-table-active-bg: #dfc2c4;
+        --bs-table-active-color: #000;
+        --bs-table-hover-bg: #e5c7ca;
+        --bs-table-hover-color: #000;
+        color: var(--bs-table-color);
+        border-color: var(--bs-table-border-color);
+      }
+
+      .table-light {
+        --bs-table-color: #000;
+        --bs-table-bg: #f8f9fa;
+        --bs-table-border-color: #dfe0e1;
+        --bs-table-striped-bg: #ecedee;
+        --bs-table-striped-color: #000;
+        --bs-table-active-bg: #dfe0e1;
+        --bs-table-active-color: #000;
+        --bs-table-hover-bg: #e5e6e7;
+        --bs-table-hover-color: #000;
+        color: var(--bs-table-color);
+        border-color: var(--bs-table-border-color);
+      }
+
+      .table-dark {
+        --bs-table-color: #fff;
+        --bs-table-bg: #212529;
+        --bs-table-border-color: #373b3e;
+        --bs-table-striped-bg: #2c3034;
+        --bs-table-striped-color: #fff;
+        --bs-table-active-bg: #373b3e;
+        --bs-table-active-color: #fff;
+        --bs-table-hover-bg: #323539;
+        --bs-table-hover-color: #fff;
+        color: var(--bs-table-color);
+        border-color: var(--bs-table-border-color);
+      }
+
+      .table-responsive {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="row">
+      <div id="banner-bar" class="col-sm-12">
+        <div style="width: 100%; padding: 10px; display: flex; align-items: center;">
+          <a href="http://uaf.edu/"><img class="uaflogo" alt="UAF logo" src="../input/uaflogoBlue.png"></a>
+    			<a class="text-white" style="font-weight: bold; margin-top: auto; margin-bottom: auto;" href="http://uaf.edu">UNIVERSITY OF ALASKA FAIRBANKS</a>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="background: #007682; height: 8px;"></div>
+    <div class="row">
+      <div id="banner-logo" class="col-sm-12" style="display: flex; align-items: center;">
+        <div style="width: 100%; padding: 10px; display: flex; align-items: center;">
+          <a href="https://www.uaf.edu/cfos"><img alt="CFOS Information Technology" src="../input/cfos.png"></a>
+    			<span style="font-weight: bold; margin-top: auto; margin-bottom: auto; margin-left: 10px; font-size: 3em;">CFOS Information Technology</span>
+        </div>
+       <!-- <div id="banner-title" style="display: flex; align-items: center;">
+         <div class="cfostitle">
+           <a href="https://www.sikuliaq.alaska.edu/" title="R/V Sikuliaq"><img alt="R/V Sikuliaq" src="sikuliaqlogo.png"></a>
+           <span style="font-weight: bold; font-style: italic; margin-top: auto; margin-bottom: auto; display: flex; justify-content: center; margin-left: 10px;"></span></a> R/V <i>Sikuliaq</i>
+         </div>
+       </div> -->
+      </div>
+    </div>

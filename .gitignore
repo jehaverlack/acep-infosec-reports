@@ -1,0 +1,9 @@
+node_modules/*
+reports/*.md
+reports/*.html
+reports/*.pdf
+input/issues-*.csv
+input/issues-*.json
+input/api-credentials.json
+input/*-cfost-it-support.json
+input/projects.json

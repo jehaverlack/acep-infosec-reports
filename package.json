@@ -1,0 +1,28 @@
+{
+  "name": "cfosit-reports",
+  "version": "1.0.0",
+  "version_date": "2023-03-28",
+  "description": "Import CSV from Taiga and generates an HTML / PDF report.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.alaska.edu/cfos/cfosit-reports.git"
+  },
+  "author": "John Haverlack",
+  "author_email": "jehaverlack@alaska.edu",
+  "license": "ISC",
+  "copyright": "Copyright Ⓒ 2023 University of Alaska Fairbanks",
+  "copyright_holder": "University of Alaska Fairbanks",
+  "copyright_years": "2023",
+  "copyright_homepage": "http://www.uaf.edu",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "csv-parser": "^3.0.0",
+    "csvtojson": "^2.0.10",
+    "fast-csv": "^4.3.6",
+    "marked": "^4.2.12"
+  }
+}

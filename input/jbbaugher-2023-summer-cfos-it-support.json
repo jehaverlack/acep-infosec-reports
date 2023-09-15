@@ -1,0 +1,323 @@
+{
+  "id": 715381,
+  "name": "2023 Summer CFOS IT Support",
+  "slug": "jbbaugher-2023-summer-cfos-it-support",
+  "description": "Issues, Project Planning, and other events involving CFOS IT during summer of 2023",
+  "members": [
+    {
+      "role": 4339203,
+      "role_name": "Product Owner",
+      "full_name": "CFOS IT",
+      "full_name_display": "CFOS IT",
+      "is_active": true,
+      "id": 557886,
+      "color": "#dd5b3e",
+      "username": "cfosadmin",
+      "photo": "https://media-protected.taiga.io/user/5/9/5/e/37852242c724d6a6cc20a19fe06511e223015d86f4db85cd8e2eadf0ab81/cfos-850x850.png.80x80_q85_crop.png?token=ZLbn2w%3A2b-vm8zkyBvowhffbNux-Ncok-___9CvXFxxx1ft-gwBRAiZn9N14Rux6UJ3yh2xYPSa35s-ijLIJJV4A_uBDA",
+      "gravatar_id": "13775e8fa5a7e3d6101010b39665b211"
+    },
+    {
+      "role": 4339205,
+      "role_name": "SUPPORT",
+      "full_name": "Jeffrey Simonson",
+      "full_name_display": "Jeffrey Simonson",
+      "is_active": true,
+      "id": 559448,
+      "color": "#5c5d5c",
+      "username": "jhsimonson",
+      "photo": null,
+      "gravatar_id": "39189656330c7b4da22d4dd31d790682"
+    },
+    {
+      "role": 4339203,
+      "role_name": "Product Owner",
+      "full_name": "John Haverlack",
+      "full_name_display": "John Haverlack",
+      "is_active": true,
+      "id": 557887,
+      "color": "#46f603",
+      "username": "jehaverlack",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZLbn2w%3APPklq42GuBj28uxGW9EEMkSkwqaSIehxqMSGUeNlzUIYr87fEjzzj6rBXBnFMJbxLiVtRE46Kxu0ps4q-gG_2g",
+      "gravatar_id": "9b1774452ed43b230868b014e05a7225"
+    },
+    {
+      "role": 4339203,
+      "role_name": "Product Owner",
+      "full_name": "Jonathon Baugher",
+      "full_name_display": "Jonathon Baugher",
+      "is_active": true,
+      "id": 558105,
+      "color": "#d6e7f9",
+      "username": "jbbaugher",
+      "photo": null,
+      "gravatar_id": "a3a8f336a9da3f0cb0a89cb84449e705"
+    },
+    {
+      "role": 4339205,
+      "role_name": "SUPPORT",
+      "full_name": "Tendai Shambare",
+      "full_name_display": "Tendai Shambare",
+      "is_active": true,
+      "id": 558118,
+      "color": "#b2d755",
+      "username": "tsshambare",
+      "photo": "https://media-protected.taiga.io/user/2/e/2/c/f74009d5dab9ca7e7fdf8e2221fbd842ef7bda53ce1848e061439cdc9cb2/eye_symbol-3196130928.png.80x80_q85_crop.jpg?token=ZLbn2w%3A9NwWv3Zchy1mKU-G5I3o2R2IYWyQcCYTz1MyRmiYATl0TP_8CK9Zb0SyN0-TAdQtGs0FBJYczT7-Kh1NQoXpNg",
+      "gravatar_id": "36737ab3d06140f2de8d54d206d26e04"
+    },
+    {
+      "role": 4339205,
+      "role_name": "SUPPORT",
+      "full_name": "Thomas Buzzek",
+      "full_name_display": "Thomas Buzzek",
+      "is_active": true,
+      "id": 559447,
+      "color": "#b2b7af",
+      "username": "TBuzzek",
+      "photo": null,
+      "gravatar_id": "c7a49b9de2247531679ccc0f4bd64913"
+    }
+  ],
+  "issue_custom_attributes": null,
+  "issue_duedates": [
+    {
+      "id": 1299027,
+      "name": "Default",
+      "order": 1,
+      "by_default": true,
+      "color": "#9dce0a",
+      "days_to_due": null,
+      "project_id": 715381
+    },
+    {
+      "id": 1299028,
+      "name": "Due soon",
+      "order": 2,
+      "by_default": false,
+      "color": "#ff9900",
+      "days_to_due": 14,
+      "project_id": 715381
+    },
+    {
+      "id": 1299029,
+      "name": "Past due",
+      "order": 3,
+      "by_default": false,
+      "color": "#E44057",
+      "days_to_due": 0,
+      "project_id": 715381
+    }
+  ],
+  "issue_statuses": [
+    {
+      "id": 5011180,
+      "name": "New",
+      "order": 0,
+      "is_closed": false,
+      "project_id": 715381,
+      "color": "#60f",
+      "slug": "new"
+    },
+    {
+      "id": 5011181,
+      "name": "Open",
+      "order": 1,
+      "is_closed": false,
+      "project_id": 715381,
+      "color": "#00f",
+      "slug": "open"
+    },
+    {
+      "id": 5011182,
+      "name": "Closed",
+      "order": 3,
+      "is_closed": true,
+      "project_id": 715381,
+      "color": "#090",
+      "slug": "closed"
+    },
+    {
+      "id": 5011183,
+      "name": "Pending",
+      "order": 4,
+      "is_closed": false,
+      "project_id": 715381,
+      "color": "#e70",
+      "slug": "pending"
+    },
+    {
+      "id": 5011184,
+      "name": "Postponed",
+      "order": 5,
+      "is_closed": false,
+      "project_id": 715381,
+      "color": "#c00",
+      "slug": "postponed"
+    },
+    {
+      "id": 5011185,
+      "name": "Rejected",
+      "order": 6,
+      "is_closed": true,
+      "project_id": 715381,
+      "color": "#A9AABC",
+      "slug": "rejected"
+    }
+  ],
+  "issue_types": [
+    {
+      "id": 2155062,
+      "name": "Support Request",
+      "order": 0,
+      "project_id": 715381,
+      "color": "#00f"
+    },
+    {
+      "id": 2155063,
+      "name": "Project",
+      "order": 1,
+      "project_id": 715381,
+      "color": "#009"
+    },
+    {
+      "id": 2155064,
+      "name": "Maintenance",
+      "order": 2,
+      "project_id": 715381,
+      "color": "#50a"
+    },
+    {
+      "id": 2155065,
+      "name": "Meeting",
+      "order": 3,
+      "project_id": 715381,
+      "color": "#AC51D3"
+    },
+    {
+      "id": 2155066,
+      "name": "Documentation",
+      "order": 4,
+      "project_id": 715381,
+      "color": "#090"
+    },
+    {
+      "id": 2155067,
+      "name": "Procurement",
+      "order": 5,
+      "project_id": 715381,
+      "color": "#0c0"
+    },
+    {
+      "id": 2155068,
+      "name": "Bug",
+      "order": 6,
+      "project_id": 715381,
+      "color": "#e70"
+    },
+    {
+      "id": 2155069,
+      "name": "Change Request",
+      "order": 7,
+      "project_id": 715381,
+      "color": "#E44057"
+    },
+    {
+      "id": 2155070,
+      "name": "Administrative",
+      "order": 8,
+      "project_id": 715381,
+      "color": "#b00"
+    },
+    {
+      "id": 2155071,
+      "name": "Cybersecurity",
+      "order": 9,
+      "project_id": 715381,
+      "color": "#f00"
+    }
+  ],
+  "issues_csv_uuid": "e0dcda548e704d16a12acbc6a5458ea2",
+  "priorities": [
+    {
+      "id": 2148802,
+      "name": "Low",
+      "order": 1,
+      "project_id": 715381,
+      "color": "#5178D3"
+    },
+    {
+      "id": 2148803,
+      "name": "Normal",
+      "order": 3,
+      "project_id": 715381,
+      "color": "#78D351"
+    },
+    {
+      "id": 2148804,
+      "name": "High",
+      "order": 5,
+      "project_id": 715381,
+      "color": "#e70"
+    },
+    {
+      "id": 2148805,
+      "name": "Urgent",
+      "order": 6,
+      "project_id": 715381,
+      "color": "#b00"
+    }
+  ],
+  "severities": [
+    {
+      "id": 3574582,
+      "name": "Wishlist",
+      "order": 1,
+      "project_id": 715381,
+      "color": "#70728F"
+    },
+    {
+      "id": 3574583,
+      "name": "Minor",
+      "order": 2,
+      "project_id": 715381,
+      "color": "#40E47C"
+    },
+    {
+      "id": 3574584,
+      "name": "Normal",
+      "order": 3,
+      "project_id": 715381,
+      "color": "#A8E440"
+    },
+    {
+      "id": 3574585,
+      "name": "Important",
+      "order": 4,
+      "project_id": 715381,
+      "color": "#E4CE40"
+    },
+    {
+      "id": 3574586,
+      "name": "Critical",
+      "order": 5,
+      "project_id": 715381,
+      "color": "#E47C40"
+    }
+  ],
+  "tags": [],
+  "tags_colors": {
+    "fbx": "#ffc300",
+    "lp": "#5178D3",
+    "smc": "#51CFD3",
+    "cfos it": "#00f",
+    "skq": "#3B91C8",
+    "sddc": "#3BC88B",
+    "printers": "#78D351",
+    "oit": "#8151D3",
+    "web": "#D351CF",
+    "cfos": "#51A3D3",
+    "ci": "#5178D3",
+    "email": "#800",
+    "research": "#070",
+    "fx": null
+  }
+}

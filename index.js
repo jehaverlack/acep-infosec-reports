@@ -394,7 +394,8 @@ for (i in issues) {
 
 
 report_md += "\n"
-report_md += '# ' + cnf['REPORT']['ORGANIZATION'] + ': ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + ' Weekly Report' + "\n"
+// report_md += '# ' + cnf['REPORT']['ORGANIZATION'] + ': ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + ' Weekly Report' + "\n"
+report_md += '# ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + ' Weekly Report' + "\n"
 report_md += '- **Report Period:** ' + cnf['TIME']['START']['LOCAL']['YYYY-MM-DD'] + ' to ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + "\n"
 report_md += '- **Issues:** [' + cnf['REPORT']['ORGANIZATION'] + ' ' + cnf['REPORT']['CONTEXT'] + ' Issues](' + cnf['REPORT']['TAIGA_URL'] + ')' + "\n"
 report_md += '- **Support Contact:** Please send support requests to:' + '<a href="mailto:' + cnf['REPORT']['CONTACT_EMAIL'] +'">' + cnf['REPORT']['CONTACT_EMAIL'] +'</a>' + "\n"
@@ -437,6 +438,7 @@ report_md += "\n"
 
 
 // let json_issues_table = issues_to_json_table(issues)
+report_md += "\n"
 report_md += '# Activity' + "\n"
 // report_md += "\n"
 // report_md += json_to_md_table(json_issues_table)
@@ -512,31 +514,31 @@ report_md += json_to_md_table(legend_table)
 // console.log(JSON.stringify(issues, null, 2))
 
 
-// Special Projects
-let special_issues = []
-for (i in issues) {
-  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO']) {
-    if (issues[i]['tags'].includes('may 2023')) {
-      special_issues.push(issues[i])
-    }
-  }
-}
-
-// console.log(JSON.stringify(special_issues, null, 2))
-
-let special_issues_table = issues_to_json_table(special_issues)
-// console.log(JSON.stringify(special_issues_table, null, 2))
-report_md += "---\n"
-report_md += '## May 2023 Priorities' + "\n"
-if (special_issues_table.length > 0) {
-  report_md += special_issues_table.length + " May 2023 Priority Issues.\n"
-  report_md += "\n"
-  report_md += json_to_md_table(special_issues_table)
-  report_md += "\n"
-} else {
-  report_md += "\n"
-  report_md += "- No issues were **May 2023 Priority** issues.\n"
-}
+// // Special Projects
+// let special_issues = []
+// for (i in issues) {
+//   if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO']) {
+//     if (issues[i]['tags'].includes('may 2023')) {
+//       special_issues.push(issues[i])
+//     }
+//   }
+// }
+//
+// // console.log(JSON.stringify(special_issues, null, 2))
+//
+// let special_issues_table = issues_to_json_table(special_issues)
+// // console.log(JSON.stringify(special_issues_table, null, 2))
+// report_md += "---\n"
+// report_md += '## May 2023 Priorities' + "\n"
+// if (special_issues_table.length > 0) {
+//   report_md += special_issues_table.length + " May 2023 Priority Issues.\n"
+//   report_md += "\n"
+//   report_md += json_to_md_table(special_issues_table)
+//   report_md += "\n"
+// } else {
+//   report_md += "\n"
+//   report_md += "- No issues were **May 2023 Priority** issues.\n"
+// }
 
 
 

@@ -5,32 +5,32 @@
     "REPORT_DIR":"DIRNAME/reports"
   },
   "FILES": {
-    "INPUT_CSV":"INPUT_DIR/issues-cfosit.csv",
-    "INPUT_JSON":"INPUT_DIR/issues-cfosit.json",
-    "TAIGA_CONFIG":"INPUT_DIR/cfos-it-support.json",
+    "INPUT_CSV":"INPUT_DIR/issues-acep-infosec.csv",
+    "INPUT_JSON":"INPUT_DIR/issues-acep-infosec.json",
+    "TAIGA_CONFIG":"INPUT_DIR/jehaverlack-acep-haverlack.json",
     "HTML_HEADER":"INPUT_DIR/head.html",
     "HTML_FOOTER":"INPUT_DIR/foot.html"
   },
   "REPORT":{
-    "ORGANIZATION":"CFOS IT",
-    "LOGO":"INPUT_DIR/cfos.png",
-    "CONTEXT":"Support Requests",
+    "ORGANIZATION":"ACEP InfoSec",
+    "LOGO":"INPUT_DIR/acep.png",
+    "CONTEXT":"Cybersecurity",
     "PERIOD":"Weekly",
     "PERIOD_DAYS": 7,
-    "TAIGA_SLUG":"jbbaugher-2023-summer-cfos-it-support",
+    "TAIGA_SLUG":"jehaverlack-acep-haverlack",
     "TAIGA_URL":"https://tree.taiga.io/project/TAIGA_SLUG/issues",
     "TAIGA_TICKET_BASE_URL":"https://tree.taiga.io/project/TAIGA_SLUG/issue/",
     "TAIGA_API_URL":"https://api.taiga.io/api/v1/",
-    "HEADER_ISSUE_NO":"8",
-    "CONTACT_EMAIL":"uaf-cfos-it-support@alaska.edu"
+    "HEADER_ISSUE_NO":"40",
+    "CONTACT_EMAIL":"jehaverlack@alaska.edu"
   },
   "TABLE_COLS": {
     "id": "ID",
-    "subject": "Issue",
-    "dc": "Data Center",
-    "sa": "Service Area",
+    "subject": "Subject",
+    "dc": "Project",
+    "sa": "Department",
     "type": "Type",
-    "labels": "Labels",
+    "labels": "Tags",
     "priority": "Priority",
     "status": "Status",
     "assigned_to": "Assigned to",
@@ -38,24 +38,23 @@
     "due_date": "Due Date"
   },
   "DATA_CENTERS":{
-    "fbx": "Fairbanks Campus",
-    "lp": "Lena Point Campus",
-    "skq": "Sikuliaq",
-    "smc": "Seward Marine Center",
-    "cfos": "College of Fisheries and Ocean Sciences",
-    "cfos it": "CFOS Information Techology"
+    "acep": "Alaska Center for Energy and Power",
+    "arctic":"Alaska Regional Collaboration for Technology Innovation and Commercialization"
   },
   "SERVICE_AREAS": {
     "ci": "Cyberinfrastructure",
-    "email": "Email",
-    "dt": "Desktop Support",
-    "printers": "Printing",
+    "cs": "Cybersecurity",
+    "is": "Infomation Security",
+    "devops":"DevOps",
+    "data": "Data Team",
+    "hr":"Human Resources",
     "research": "Research Support",
-    "travel": "Travel",
-    "web": "Websites"
+    "web": "Web Team"
   },
   "OTHER_TAGS": {
     "oit": "UA Office of Information Technology",
-    "sddc": "Software Defined Data Center"
+    "sbx": "Sandbox",
+    "sddc": "Software Defined Data Center",
+    "travel": "Travel"
   }
 }

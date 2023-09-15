@@ -1,0 +1,290 @@
+{
+  "id": 929309,
+  "name": "ACEP InfoSec",
+  "slug": "jehaverlack-acep-haverlack",
+  "description": "ACEP InfoSec Project Management",
+  "members": [
+    {
+      "role": 5626154,
+      "role_name": "Product Owner",
+      "full_name": "John Haverlack",
+      "full_name_display": "John Haverlack",
+      "is_active": true,
+      "id": 557887,
+      "color": "#46f603",
+      "username": "jehaverlack",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZQSueg%3Ap8GmwQxctbfDhn3lq5-a7IQjPrZ5RRahKaL5dmoXXJVyi6MKE3JRzohefEufJbFPSes6Vgby2kUcavP2GjPiUw",
+      "gravatar_id": "9b1774452ed43b230868b014e05a7225"
+    }
+  ],
+  "issue_custom_attributes": null,
+  "issue_duedates": [
+    {
+      "id": 1940819,
+      "name": "Default",
+      "order": 1,
+      "by_default": true,
+      "color": "#9dce0a",
+      "days_to_due": null,
+      "project_id": 929309
+    },
+    {
+      "id": 1940820,
+      "name": "Due soon",
+      "order": 2,
+      "by_default": false,
+      "color": "#ff9900",
+      "days_to_due": 14,
+      "project_id": 929309
+    },
+    {
+      "id": 1940821,
+      "name": "Past due",
+      "order": 3,
+      "by_default": false,
+      "color": "#E44057",
+      "days_to_due": 0,
+      "project_id": 929309
+    }
+  ],
+  "issue_statuses": [
+    {
+      "id": 6508937,
+      "name": "New",
+      "order": 0,
+      "is_closed": false,
+      "project_id": 929309,
+      "color": "#9900ff",
+      "slug": "new"
+    },
+    {
+      "id": 6508938,
+      "name": "Open",
+      "order": 1,
+      "is_closed": false,
+      "project_id": 929309,
+      "color": "#0000ff",
+      "slug": "open"
+    },
+    {
+      "id": 6508940,
+      "name": "Closed",
+      "order": 2,
+      "is_closed": true,
+      "project_id": 929309,
+      "color": "#090",
+      "slug": "closed"
+    },
+    {
+      "id": 7247649,
+      "name": "Pending",
+      "order": 3,
+      "is_closed": false,
+      "project_id": 929309,
+      "color": "#e80",
+      "slug": "pending"
+    },
+    {
+      "id": 6508943,
+      "name": "Postponed",
+      "order": 4,
+      "is_closed": false,
+      "project_id": 929309,
+      "color": "#c00",
+      "slug": "postponed"
+    },
+    {
+      "id": 6508942,
+      "name": "Rejected",
+      "order": 5,
+      "is_closed": true,
+      "project_id": 929309,
+      "color": "#A9AABC",
+      "slug": "rejected"
+    }
+  ],
+  "issue_types": [
+    {
+      "id": 2797233,
+      "name": "Project",
+      "order": 0,
+      "project_id": 929309,
+      "color": "#00f"
+    },
+    {
+      "id": 2797234,
+      "name": "Documentation",
+      "order": 1,
+      "project_id": 929309,
+      "color": "#090"
+    },
+    {
+      "id": 2797235,
+      "name": "Meeting",
+      "order": 2,
+      "project_id": 929309,
+      "color": "#8151D3"
+    },
+    {
+      "id": 2820158,
+      "name": "Task",
+      "order": 3,
+      "project_id": 929309,
+      "color": "#f90"
+    },
+    {
+      "id": 2820159,
+      "name": "Administrative",
+      "order": 4,
+      "project_id": 929309,
+      "color": "#900"
+    },
+    {
+      "id": 2820160,
+      "name": "Security Incident",
+      "order": 5,
+      "project_id": 929309,
+      "color": "#f00"
+    },
+    {
+      "id": 2820164,
+      "name": "Maintenance",
+      "order": 6,
+      "project_id": 929309,
+      "color": "#51A3D3"
+    },
+    {
+      "id": 2820165,
+      "name": "Coding",
+      "order": 7,
+      "project_id": 929309,
+      "color": "#060"
+    },
+    {
+      "id": 2820169,
+      "name": "Training",
+      "order": 8,
+      "project_id": 929309,
+      "color": "#78D351"
+    },
+    {
+      "id": 3113673,
+      "name": "Reading",
+      "order": 9,
+      "project_id": 929309,
+      "color": "#00aa00"
+    },
+    {
+      "id": 3114058,
+      "name": "Procurement",
+      "order": 10,
+      "project_id": 929309,
+      "color": "#0b0"
+    },
+    {
+      "id": 3114059,
+      "name": "Change Request",
+      "order": 11,
+      "project_id": 929309,
+      "color": "#D351CF"
+    },
+    {
+      "id": 3114063,
+      "name": "Support Request",
+      "order": 12,
+      "project_id": 929309,
+      "color": "#009"
+    },
+    {
+      "id": 3114064,
+      "name": "Policy",
+      "order": 13,
+      "project_id": 929309,
+      "color": "#c00"
+    }
+  ],
+  "issues_csv_uuid": "766392a83288407fb600876989f24098",
+  "priorities": [
+    {
+      "id": 2790734,
+      "name": "Low",
+      "order": 0,
+      "project_id": 929309,
+      "color": "#51A3D3"
+    },
+    {
+      "id": 2790735,
+      "name": "Normal",
+      "order": 1,
+      "project_id": 929309,
+      "color": "#51D381"
+    },
+    {
+      "id": 2790736,
+      "name": "High",
+      "order": 2,
+      "project_id": 929309,
+      "color": "#e80"
+    },
+    {
+      "id": 3107506,
+      "name": "Urgent",
+      "order": 6,
+      "project_id": 929309,
+      "color": "#c00"
+    }
+  ],
+  "severities": [
+    {
+      "id": 4644187,
+      "name": "Wishlist",
+      "order": 0,
+      "project_id": 929309,
+      "color": "#70728F"
+    },
+    {
+      "id": 4644188,
+      "name": "Minor",
+      "order": 1,
+      "project_id": 929309,
+      "color": "#51A3D3"
+    },
+    {
+      "id": 4644189,
+      "name": "Normal",
+      "order": 2,
+      "project_id": 929309,
+      "color": "#A8E440"
+    },
+    {
+      "id": 4644190,
+      "name": "Important",
+      "order": 3,
+      "project_id": 929309,
+      "color": "#E4CE40"
+    },
+    {
+      "id": 4644191,
+      "name": "Critical",
+      "order": 4,
+      "project_id": 929309,
+      "color": "#D35450"
+    }
+  ],
+  "tags": [],
+  "tags_colors": {
+    "hr": "#A3D350",
+    "acep": "#51CFD3",
+    "arctic": "#51A3D3",
+    "oit": "#ec0",
+    "sbx": "#D351CF",
+    "ci": "#00c",
+    "service": "#51D381",
+    "is": "#c00",
+    "cs": "#c00",
+    "devops": "#0a0",
+    "data": "#080",
+    "research": "#8151D3",
+    "web": "#CFD350"
+  }
+}

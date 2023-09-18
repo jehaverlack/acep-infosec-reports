@@ -492,6 +492,9 @@ for (k in service_areas) {
 ltval['Values'] = ltval['Values'].replace(RegExp(', $'), '')
 legend_table.push(ltval)
 
+// console.log('ntags: ' + JSON.stringify(ntags, null, 2))
+// console.log('othertags: ' + JSON.stringify(other_tags, null, 2))
+
 ltval = {}
 ltval['Legend'] = "Tags"
 ltval['Values'] = ''
@@ -501,7 +504,13 @@ ltval['Values'] = ''
 
   // ltval['Values'] += '<span style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_map[k] + '">' + k + '</span>' + ' <span style="color: ' + tags_map[k] + '">' + other_tags[k] + '</span>, '
   // ltval['Values'] += '<span style="color: ' + tags_map[k] + '">' + k + '</span>, '
-}
+  }
+
+  for (k in ntags) {
+    if (!other_tags.hasOwnProperty(k)) {
+      ltval['Values'] += '<span style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[k] + '">' + k + '</span> '
+    }
+  }
 ltval['Values'] = ltval['Values'].replace(RegExp(', $'), '')
 legend_table.push(ltval)
 

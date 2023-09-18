@@ -13,7 +13,7 @@
       "id": 557887,
       "color": "#46f603",
       "username": "jehaverlack",
-      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZQTmzw%3AR0KIRIIvxGj1NHDslEzY7M88aH9ud9HpgB8dNidOtDRlM3FSD2TknCzuMc66IrqVS2wMF_9xS-Ml9IHr3PhpnQ",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZQjZUQ%3AJiImOUd1-W7HIVISHQ2k7OViMhBEl-nFG0rM8k_XBf541XZJsunxq_OMYk9bNjJx-Lb7aEZx1gWZKKuQegfQqQ",
       "gravatar_id": "9b1774452ed43b230868b014e05a7225"
     }
   ],
@@ -208,9 +208,16 @@
       "order": 14,
       "project_id": 929309,
       "color": "#0b0"
+    },
+    {
+      "id": 3146694,
+      "name": "Liaison",
+      "order": 15,
+      "project_id": 929309,
+      "color": "#4C566A"
     }
   ],
-  "issues_csv_uuid": "faa0d01515074207b0cf5ac46a19847a",
+  "issues_csv_uuid": "3d8bd0889ef04278bb0f988e6e511edb",
   "priorities": [
     {
       "id": 2790734,
@@ -302,6 +309,8 @@
     "ced": "#51A3D3",
     "reap": "#51A3D3",
     "t3": "#51A3D3",
-    "riseup": "#51A3D3"
+    "riseup": "#51A3D3",
+    "code": "#070",
+    "onboarding": "#51D355"
   }
 }

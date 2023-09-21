@@ -583,7 +583,8 @@ let highlight_severities = ['Important', 'Critical']
 let highlight_priority = ['High', 'Urgent']
 for (i in issues) {
   if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO']) {
-    if (highlight_severities.includes( issues[i]['severity'] ) || highlight_severities.includes( issues[i]['priority'] )) {
+    if (highlight_severities.includes( issues[i]['severity']) ) {
+    // if (highlight_severities.includes( issues[i]['severity'] ) || highlight_priority.includes( issues[i]['priority'] )) {
       highlights.push(issues[i])
     }
   }
@@ -801,8 +802,8 @@ function json_to_md_table(json_table) {
 
 // Function Libraryies
 function issues_to_json_table(issues) {
-  // console.log('issues')
-  // console.log(JSON.stringify(issues, null, 2))
+  console.log('issues')
+  console.log(JSON.stringify(issues, null, 2))
   let json_table = []
 
   let id_dc_map = [];
@@ -811,8 +812,15 @@ function issues_to_json_table(issues) {
     let map_obj = {
                     // issuesid: item,
                     id: item.id,
+                    subject: String(item.subject),
                     dc: String(item.dc[0]),
-                    sa: String(item.sa[0])
+                    sa: String(item.sa[0]),
+                    type: String(item.type),
+                    owner: String(item.owner),
+                    severity: String(item.severity),
+                    priority: String(item.priority),
+                    status: String(item.status),
+                    due_date: String(item.due_date)
                   };
     id_dc_map.push(map_obj)
   });
@@ -822,25 +830,51 @@ function issues_to_json_table(issues) {
   }
 
 
+  // id_dc_map.sort((a, b) => {
+  //   // First, compare by dc
+  //   if (a.dc.toUpperCase() < b.dc.toUpperCase()) {
+  //     return -1;
+  //   } else if (a.dc.toUpperCase() > b.dc.toUpperCase()) {
+  //     return 1;
+  //   } else {
+  //     // If dc values are equal, compare by sa
+  //     if (a.sa && b.sa) {
+  //       if (a.sa.toUpperCase() < b.sa.toUpperCase()) {
+  //         return -1;
+  //       } else if (a.sa.toUpperCase() > b.sa.toUpperCase()) {
+  //         return 1;
+  //       } else {
+  //         return 0;
+  //       }
+  //     } else if (a.sa) {
+  //       return -1;
+  //     } else if (b.sa) {
+  //       return 1;
+  //     } else {
+  //       return 0;
+  //     }
+  //   }
+  // });
+
   id_dc_map.sort((a, b) => {
-    // First, compare by dc
-    if (a.dc.toUpperCase() < b.dc.toUpperCase()) {
+    // First, compare by priority
+    if (a.priority.toUpperCase() < b.priority.toUpperCase()) {
       return -1;
-    } else if (a.dc.toUpperCase() > b.dc.toUpperCase()) {
+    } else if (a.priority.toUpperCase() > b.priority.toUpperCase()) {
       return 1;
     } else {
-      // If dc values are equal, compare by sa
-      if (a.sa && b.sa) {
-        if (a.sa.toUpperCase() < b.sa.toUpperCase()) {
+      // If priority values are equal, compare by status
+      if (a.status && b.status) {
+        if (a.status.toUpperCase() < b.status.toUpperCase()) {
           return -1;
-        } else if (a.sa.toUpperCase() > b.sa.toUpperCase()) {
+        } else if (a.status.toUpperCase() > b.status.toUpperCase()) {
           return 1;
         } else {
           return 0;
         }
-      } else if (a.sa) {
+      } else if (a.status) {
         return -1;
-      } else if (b.sa) {
+      } else if (b.status) {
         return 1;
       } else {
         return 0;
@@ -849,8 +883,8 @@ function issues_to_json_table(issues) {
   });
 
   // console.log('Sorting:....')
-  // console.log('id_dc_map')
-  // console.log(JSON.stringify(id_dc_map, null, 2))
+  console.log('id_dc_map')
+  console.log(JSON.stringify(id_dc_map, null, 2))
   // console.log(JSON.stringify(id_dc_map_sorted, null, 2))
 
   // console.log(JSON.stringify(issues, null, 2))

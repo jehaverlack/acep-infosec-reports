@@ -802,8 +802,8 @@ function json_to_md_table(json_table) {
 
 // Function Libraryies
 function issues_to_json_table(issues) {
-  console.log('issues')
-  console.log(JSON.stringify(issues, null, 2))
+  // console.log('issues')
+  // console.log(JSON.stringify(issues, null, 2))
   let json_table = []
 
   let id_dc_map = [];
@@ -883,8 +883,8 @@ function issues_to_json_table(issues) {
   });
 
   // console.log('Sorting:....')
-  console.log('id_dc_map')
-  console.log(JSON.stringify(id_dc_map, null, 2))
+  // console.log('id_dc_map')
+  // console.log(JSON.stringify(id_dc_map, null, 2))
   // console.log(JSON.stringify(id_dc_map_sorted, null, 2))
 
   // console.log(JSON.stringify(issues, null, 2))

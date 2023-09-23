@@ -458,7 +458,7 @@ report_md += "\n"
 report_md += '# Activity' + "\n"
 report_md += "\n"
 report_md += "**This active report summarizes Highlights, Closed, New, Active and Idle issues for the week.**\n"
-report_md += "- For access to issue details please contact <a href='mailto:jehaverlack@alaska.edu'>jehaverlack@alaska.edu</a>\n"
+report_md += "- For access to issue detail links please contact <a href='mailto:jehaverlack@alaska.edu'>jehaverlack@alaska.edu</a>\n"
 report_md += "\n"
 
 // report_md += "\n"

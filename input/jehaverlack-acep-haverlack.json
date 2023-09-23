@@ -13,7 +13,7 @@
       "id": 557887,
       "color": "#46f603",
       "username": "jehaverlack",
-      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZQyj8w%3A0KIhJqyo5aJhraVBJ3anvp7ojDuOKalcYhJ5JRHDjXX_S2DS478GnTxbFUN8mD22HIQI8vvju_bdXMj7WlZVoA",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZQ4vrw%3AvcAvLjYdgBh4lf113I8Ok4OgwopnuSKyc5Ik5oIEwHh6Dv1XzOvObr4tvInJ0Y1usw5pmGb3hKhl-voRZ2gN-A",
       "gravatar_id": "9b1774452ed43b230868b014e05a7225"
     }
   ],
@@ -217,7 +217,7 @@
       "color": "#4C566A"
     }
   ],
-  "issues_csv_uuid": "4ff07b2ecfa146759c0d24588caee767",
+  "issues_csv_uuid": "819b741f9e2746c3b0c3331a25323db2",
   "priorities": [
     {
       "id": 2790734,
@@ -314,6 +314,9 @@
     "onboarding": "#51D355",
     "lnchak": "#51A3D3",
     "storm": "#51A3D3",
-    "eaton": "#51A3D3"
+    "eaton": "#51A3D3",
+    "apa": "#51A3D3",
+    "kea": "#51A3D3",
+    "legal": "#f80"
   }
 }

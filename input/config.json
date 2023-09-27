@@ -49,12 +49,14 @@
     "ice":"Alaska Center for Innovation, Commercialization, and Entrepreneurship",
     "ced":"Center for Economic Development",
     "eaton":"EATON",
+    "fedora":"Fostering Energy Data Operational Resilience in Alaska",
     "kea":"Kotzebue Electric Association",
     "lnchak":"Launch Alaska",
     "reap":"Renewable Energy Alaska Project",
     "storm":"Data-Driven Approaches for Secure Electric Grids in Communities Disproportionately Impacted by Climate Change",
     "t3":"Teaching Through Technology",
-    "riseup":"RISE UP"
+    "riseup":"RISE UP",
+    "uaf":"University of Alaska Fairbanks"
   },
   "SERVICE_AREAS": {
     "infosec": "Infomation Security",

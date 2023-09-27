@@ -577,6 +577,9 @@ report_md += json_to_md_table(legend_table)
 // }
 
 
+
+
+
 // Weekly Highlights
 let highlights = []
 let highlight_severities = ['Important', 'Critical']
@@ -592,6 +595,75 @@ for (i in issues) {
   }
 }
 
+// Closed
+let closed_issues = []
+for (i in issues) {
+  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['finished_ts'] != '') {
+    if (issues[i]['finished_ts'] > start_ts) {
+      closed_issues.push(issues[i])
+      new_active_closed[issues[i]['ref']] = true
+    }
+  }
+}
+
+// Active
+let active_issues = []
+for (i in issues) {
+  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['modified_ts'] > start_ts) {
+    if (issues[i]['status'] != "New" && issues[i]['status'] != "Closed") {
+      active_issues.push(issues[i])
+      new_active_closed[issues[i]['ref']] = true
+    }
+  }
+}
+
+// New
+let new_issues = []
+for (i in issues) {
+  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['created_ts'] > start_ts) {
+    new_issues.push(issues[i])
+    new_active_closed[issues[i]['ref']] = true
+  }
+}
+
+// Idle
+let idle_issues = []
+for (i in issues) {
+  // if (issues[i]['modified_ts'] <= start_ts) {
+  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && ! new_active_closed.hasOwnProperty(issues[i]['ref']) ) {
+    if (issues[i]['status'] != "Rejected" && issues[i]['status'] != "Closed") {
+      idle_issues.push(issues[i])
+    }
+  }
+  // }
+}
+
+
+
+// Issue Count Summary
+let issue_count_table = []
+let issue_count = {
+                          'Highlights': highlights.length,
+                          'Closed': closed_issues.length,
+                          'Active': active_issues.length,
+                          'New': new_issues.length,
+                          'Idle': idle_issues.length
+                        }
+issue_count_table.push(issue_count)
+
+// console.log(JSON.stringify(issue_count, null, 2))
+// console.log(JSON.stringify(issue_count_table, null, 2))
+
+report_md += '<div style="width: 50%">' + "\n"
+report_md += '<h2>Issue Count by Status</h2>' + "\n"
+report_md += "\n"
+report_md += json_to_md_table(issue_count_table)
+report_md += "\n"
+report_md += "</div>" + "\n"
+report_md += "\n"
+
+
+// Weekly Highlights
 let highlights_table = issues_to_json_table(highlights)
 // console.log(JSON.stringify(highlights_table, null, 2))
 report_md += "---\n"
@@ -607,20 +679,9 @@ if (highlights_table.length > 0) {
   report_md += "- No issues were **May 2023 Priority** issues.\n"
 }
 
-// Closed
-
-let closed_issues = []
-for (i in issues) {
-  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['finished_ts'] != '') {
-    if (issues[i]['finished_ts'] > start_ts) {
-      closed_issues.push(issues[i])
-      new_active_closed[issues[i]['ref']] = true
-    }
-  }
-}
 
 // console.log(JSON.stringify(closed_issues, null, 2))
-
+// Closed
 let closed_issues_table = issues_to_json_table(closed_issues)
 // console.log(JSON.stringify(closed_issues_table, null, 2))
 report_md += "---\n"
@@ -640,16 +701,7 @@ if (closed_issues_table.length > 0) {
 
 
 
-let active_issues = []
-for (i in issues) {
-  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['modified_ts'] > start_ts) {
-    if (issues[i]['status'] != "New" && issues[i]['status'] != "Closed") {
-      active_issues.push(issues[i])
-      new_active_closed[issues[i]['ref']] = true
-    }
-  }
-}
-
+// Active
 let active_issues_table = issues_to_json_table(active_issues)
 report_md += "---\n"
 report_md += '## Active Issues' + "\n"
@@ -660,17 +712,8 @@ report_md += "\n"
 
 
 
-let new_issues = []
-for (i in issues) {
-  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['created_ts'] > start_ts) {
-    new_issues.push(issues[i])
-    new_active_closed[issues[i]['ref']] = true
-  }
-}
-
 // console.log(JSON.stringify(new_issues, null, 2))
-
-
+// New
 if (new_issues.length > 0) {
   let new_issues_table = issues_to_json_table(new_issues)
   report_md += "---\n"
@@ -691,17 +734,7 @@ if (new_issues.length > 0) {
 
 
 
-let idle_issues = []
-for (i in issues) {
-  // if (issues[i]['modified_ts'] <= start_ts) {
-  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && ! new_active_closed.hasOwnProperty(issues[i]['ref']) ) {
-    if (issues[i]['status'] != "Rejected" && issues[i]['status'] != "Closed") {
-      idle_issues.push(issues[i])
-    }
-  }
-  // }
-}
-
+// Idle
 let idle_issues_table = issues_to_json_table(idle_issues)
 report_md += "---\n"
 report_md += '## Idle Issues' + "\n"

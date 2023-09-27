@@ -13,7 +13,7 @@
       "id": 557887,
       "color": "#46f603",
       "username": "jehaverlack",
-      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZQ4vrw%3AvcAvLjYdgBh4lf113I8Ok4OgwopnuSKyc5Ik5oIEwHh6Dv1XzOvObr4tvInJ0Y1usw5pmGb3hKhl-voRZ2gN-A",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZRR2Jw%3AFZ4JmHQroIL2xS_-WiasbZ64hTQ4Se-PFWaWgiS-P09M-ud4QBwfix7TZlqIau-ebZwlNjnE4865_JM__JX_QQ",
       "gravatar_id": "9b1774452ed43b230868b014e05a7225"
     }
   ],
@@ -112,112 +112,119 @@
       "color": "#00f"
     },
     {
+      "id": 3212823,
+      "name": "Proposal",
+      "order": 1,
+      "project_id": 929309,
+      "color": "#050"
+    },
+    {
+      "id": 3146694,
+      "name": "Liaison",
+      "order": 2,
+      "project_id": 929309,
+      "color": "#4C566A"
+    },
+    {
       "id": 2820158,
       "name": "Task",
-      "order": 1,
+      "order": 3,
       "project_id": 929309,
       "color": "#f90"
     },
     {
       "id": 2797235,
       "name": "Meeting",
-      "order": 2,
+      "order": 4,
       "project_id": 929309,
       "color": "#8151D3"
     },
     {
       "id": 2820164,
       "name": "Maintenance",
-      "order": 3,
+      "order": 5,
       "project_id": 929309,
       "color": "#51A3D3"
     },
     {
       "id": 3114063,
       "name": "Support Request",
-      "order": 4,
+      "order": 6,
       "project_id": 929309,
       "color": "#009"
     },
     {
       "id": 3114059,
       "name": "Change Request",
-      "order": 5,
+      "order": 7,
       "project_id": 929309,
       "color": "#D351CF"
     },
     {
       "id": 2820159,
       "name": "Administrative",
-      "order": 6,
+      "order": 8,
       "project_id": 929309,
       "color": "#900"
     },
     {
       "id": 3114064,
       "name": "Policy",
-      "order": 7,
+      "order": 9,
       "project_id": 929309,
       "color": "#c00"
     },
     {
       "id": 2820160,
       "name": "Security Incident",
-      "order": 8,
+      "order": 10,
       "project_id": 929309,
       "color": "#f00"
     },
     {
       "id": 3134417,
       "name": "Security Notice",
-      "order": 9,
+      "order": 11,
       "project_id": 929309,
       "color": "#f00"
     },
     {
       "id": 2797234,
       "name": "Documentation",
-      "order": 10,
+      "order": 12,
       "project_id": 929309,
       "color": "#090"
     },
     {
       "id": 2820169,
       "name": "Training",
-      "order": 11,
+      "order": 13,
       "project_id": 929309,
       "color": "#78D351"
     },
     {
       "id": 3113673,
       "name": "Reading",
-      "order": 12,
+      "order": 14,
       "project_id": 929309,
       "color": "#00aa00"
     },
     {
       "id": 2820165,
       "name": "Coding",
-      "order": 13,
+      "order": 15,
       "project_id": 929309,
       "color": "#060"
     },
     {
       "id": 3114058,
       "name": "Procurement",
-      "order": 14,
+      "order": 16,
       "project_id": 929309,
       "color": "#0b0"
-    },
-    {
-      "id": 3146694,
-      "name": "Liaison",
-      "order": 15,
-      "project_id": 929309,
-      "color": "#4C566A"
     }
   ],
-  "issues_csv_uuid": "819b741f9e2746c3b0c3331a25323db2",
+  "issues_csv_uuid": "54dc5ea41bf549d6af9fd0ca2dafb8ec",
   "priorities": [
     {
       "id": 2790734,
@@ -317,6 +324,10 @@
     "eaton": "#51A3D3",
     "apa": "#51A3D3",
     "kea": "#51A3D3",
-    "legal": "#f80"
+    "legal": "#f80",
+    "fedora": "#51A3D3",
+    "ai": "#f70",
+    "winter 23-24": "#ABD7E8",
+    "uaf": "#5178D3"
   }
 }

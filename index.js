@@ -583,9 +583,11 @@ let highlight_severities = ['Important', 'Critical']
 let highlight_priority = ['High', 'Urgent']
 for (i in issues) {
   if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO']) {
-    if (highlight_severities.includes( issues[i]['severity']) ) {
-    // if (highlight_severities.includes( issues[i]['severity'] ) || highlight_priority.includes( issues[i]['priority'] )) {
-      highlights.push(issues[i])
+    if (issues[i]['modified_ts'] > start_ts) {
+      if (highlight_severities.includes( issues[i]['severity']) ) {
+      // if (highlight_severities.includes( issues[i]['severity'] ) || highlight_priority.includes( issues[i]['priority'] )) {
+        highlights.push(issues[i])
+      }
     }
   }
 }
@@ -635,6 +637,29 @@ if (closed_issues_table.length > 0) {
 
 
 
+
+
+
+let active_issues = []
+for (i in issues) {
+  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['modified_ts'] > start_ts) {
+    if (issues[i]['status'] != "New" && issues[i]['status'] != "Closed") {
+      active_issues.push(issues[i])
+      new_active_closed[issues[i]['ref']] = true
+    }
+  }
+}
+
+let active_issues_table = issues_to_json_table(active_issues)
+report_md += "---\n"
+report_md += '## Active Issues' + "\n"
+report_md += active_issues_table.length + " issues **Active** (but not New or Closed) this week.\n"
+report_md += "\n"
+report_md += json_to_md_table(active_issues_table)
+report_md += "\n"
+
+
+
 let new_issues = []
 for (i in issues) {
   if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['created_ts'] > start_ts) {
@@ -663,27 +688,6 @@ if (new_issues.length > 0) {
   report_md += "\n"
   report_md += "- No issues were **Created** this week.\n"
 }
-
-
-
-let active_issues = []
-for (i in issues) {
-  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['modified_ts'] > start_ts) {
-    if (issues[i]['status'] != "New" && issues[i]['status'] != "Closed") {
-      active_issues.push(issues[i])
-      new_active_closed[issues[i]['ref']] = true
-    }
-  }
-}
-
-let active_issues_table = issues_to_json_table(active_issues)
-report_md += "---\n"
-report_md += '## Active Issues' + "\n"
-report_md += active_issues_table.length + " issues **Active** (but not New or Closed) this week.\n"
-report_md += "\n"
-report_md += json_to_md_table(active_issues_table)
-report_md += "\n"
-
 
 
 

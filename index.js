@@ -72,11 +72,21 @@ for (m in taiga_cnf['members']) {
 // console.log(JSON.stringify(cnf, null, 2))
 
 let all_issues = JSON.parse(fs.readFileSync(path.join(cnf['FILES']['INPUT_JSON'])))
+// console.log(JSON.stringify(all_issues, null, 2))
+let issues = []
 
-console.log(JSON.stringify(all_issues, null, 2))
+// Filtering Close Issues for Speedier Processing
+for (i in all_issues) {
+  if (all_issues[i]['is_closed'] == "True") {
+    let issue_finished_ts = tell_time(all_issues[i]['finished_date'].replace(RegExp('[\.]{1}.*$'), 'Z').replace(' ', 'T'))
+    if (issue_finished_ts > start_ts) {
+      issues.push(all_issues[i])
+    }
+  } else {
+    issues.push(all_issues[i])
+  }
+}
 
-
-let issues = all_issues
 let report_json = {}
 let report_md = ''
 let report_stats = {}
@@ -660,6 +670,7 @@ report_md += "**This active report summarizes Highlights, Closed, New, Active an
 report_md += "- For access to issue detail links please contact <a href='mailto:jehaverlack@alaska.edu'>jehaverlack@alaska.edu</a>\n"
 report_md += "\n"
 report_md += '<div style="width: 200px">' + "\n"
+report_md += "\n"
 report_md += json_to_md_table(issue_count_table)
 report_md += "\n"
 report_md += "</div>" + "\n"

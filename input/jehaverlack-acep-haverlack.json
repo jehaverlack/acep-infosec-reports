@@ -13,7 +13,7 @@
       "id": 557887,
       "color": "#46f603",
       "username": "jehaverlack",
-      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZRS48w%3ALPInYPt0vKhAX74rwF-KHkuHgTpZVWVOA6krpnhmTdJF98e3IML5rZIJsWeNdhpjdoxyb6Ty3agdtEoCPr1Utw",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZRXBpw%3Ao68TS2MWW_4mAYK1UjSud76wlRzIWpZM5B-4phDByxs2zxJUib7MOEJPOjnqkNJKw7-Ans3wAuE4JEXj8XjdZg",
       "gravatar_id": "9b1774452ed43b230868b014e05a7225"
     }
   ],
@@ -224,7 +224,7 @@
       "color": "#0b0"
     }
   ],
-  "issues_csv_uuid": "1cf66a246aa64ddbab5e07ebc8cad0dd",
+  "issues_csv_uuid": "fb5cfb3d8e764befb0d26efc9a8859ab",
   "priorities": [
     {
       "id": 2790734,
@@ -328,6 +328,7 @@
     "fedora": "#51A3D3",
     "ai": "#f70",
     "winter 23-24": "#ABD7E8",
-    "uaf": "#5178D3"
+    "uaf": "#5178D3",
+    "etf": "#51A3D3"
   }
 }

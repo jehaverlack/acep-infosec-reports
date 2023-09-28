@@ -71,8 +71,12 @@ for (m in taiga_cnf['members']) {
 
 // console.log(JSON.stringify(cnf, null, 2))
 
+let all_issues = JSON.parse(fs.readFileSync(path.join(cnf['FILES']['INPUT_JSON'])))
 
-let issues = JSON.parse(fs.readFileSync(path.join(cnf['FILES']['INPUT_JSON'])))
+console.log(JSON.stringify(all_issues, null, 2))
+
+
+let issues = all_issues
 let report_json = {}
 let report_md = ''
 let report_stats = {}
@@ -650,12 +654,12 @@ issue_count_table.push(issue_count)
 // console.log(JSON.stringify(issue_count, null, 2))
 // console.log(JSON.stringify(issue_count_table, null, 2))
 
-report_md += '<div style="width: 50%">' + "\n"
 report_md += '<h2>Issue Count by Status</h2>' + "\n"
 report_md += "\n"
 report_md += "**This active report summarizes Highlights, Closed, New, Active and Idle issues for the week.**\n"
 report_md += "- For access to issue detail links please contact <a href='mailto:jehaverlack@alaska.edu'>jehaverlack@alaska.edu</a>\n"
 report_md += "\n"
+report_md += '<div style="width: 200px">' + "\n"
 report_md += json_to_md_table(issue_count_table)
 report_md += "\n"
 report_md += "</div>" + "\n"

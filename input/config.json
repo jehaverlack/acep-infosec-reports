@@ -17,6 +17,7 @@
     "CONTEXT":"Cybersecurity",
     "PERIOD":"Weekly",
     "PERIOD_DAYS": 7,
+    "COLLAPSE_STATUSES": false,
     "TAIGA_SLUG":"jehaverlack-acep-haverlack",
     "TAIGA_URL":"https://tree.taiga.io/project/TAIGA_SLUG/issues",
     "TAIGA_TICKET_BASE_URL":"https://tree.taiga.io/project/TAIGA_SLUG/issue/",

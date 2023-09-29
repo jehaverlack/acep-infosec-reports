@@ -676,6 +676,18 @@ report_md += "\n"
 report_md += "</div>" + "\n"
 report_md += "\n"
 
+// report_md += "\n"
+// report_md +='<input type="checkbox" id="toggle">' + "\n"
+// report_md += "\n"
+// report_md +='<label for="toggle" class="toggle-button">+</label>' + "\n"
+// report_md += "\n"
+// report_md +='<label for="toggle" class="toggle-button">-</label>' + "\n"
+// report_md += "\n"
+// report_md +='<div id="myDiv">' + "\n"
+// report_md +='    <p>Content goes here.</p>' + "\n"
+// report_md +='</div>' + "\n"
+// report_md += "\n"
+
 
 // Weekly Highlights
 let highlights_table = issues_to_json_table(highlights)
@@ -694,6 +706,8 @@ if (highlights_table.length > 0) {
 }
 
 
+// console.log("COLLAPSE_STATUSES: " + cnf['REPORT']['COLLAPSE_STATUSES'])
+
 // console.log(JSON.stringify(closed_issues, null, 2))
 // Closed
 let closed_issues_table = issues_to_json_table(closed_issues)
@@ -702,9 +716,18 @@ report_md += "---\n"
 report_md += '## Closed Issues' + "\n"
 if (closed_issues_table.length > 0) {
   report_md += closed_issues_table.length + " issues **Closed** this week.\n"
+  if (cnf['REPORT']['COLLAPSE_STATUSES'] == true) {
+    report_md += "\n"
+    report_md += '<button id="closedissues_button" onclick="toggle_div(' + "'" +'closedissues' + "'" + ')">+</button> Expand/Collapse' + "\n"
+    report_md += "<div id='closedissues' style='display: none;'>\n"
+  }
   report_md += "\n"
   report_md += json_to_md_table(closed_issues_table)
   report_md += "\n"
+  if (cnf['REPORT']['COLLAPSE_STATUSES'] == true) {
+    report_md += "</div>\n"
+    report_md += "\n"
+  }
 } else {
   report_md += "\n"
   report_md += "- No issues were **Closed** this week.\n"
@@ -721,8 +744,23 @@ report_md += "---\n"
 report_md += '## Active Issues' + "\n"
 report_md += active_issues_table.length + " issues **Active** (but not New or Closed) this week.\n"
 report_md += "\n"
-report_md += json_to_md_table(active_issues_table)
-report_md += "\n"
+if (active_issues_table.length > 0) {
+  if (cnf['REPORT']['COLLAPSE_STATUSES'] == true) {
+    report_md += "\n"
+    report_md += '<button id="activeissues_button" onclick="toggle_div(' + "'" +'activeissues' + "'" + ')">+</button> Expand/Collapse' + "\n"
+    report_md += "<div id='activeissues' style='display: none;'>\n"
+  }
+  report_md += "\n"
+  report_md += json_to_md_table(active_issues_table)
+  report_md += "\n"
+  if (cnf['REPORT']['COLLAPSE_STATUSES'] == true) {
+    report_md += "</div>\n"
+    report_md += "\n"
+  }
+} else {
+  report_md += "\n"
+  report_md += "- No issues were **Active** this week.\n"
+}
 
 
 
@@ -734,9 +772,18 @@ if (new_issues.length > 0) {
   report_md += '## New Issues' + "\n"
   if (new_issues_table.length > 0) {
     report_md += new_issues_table.length + " issues **Added** this week.\n"
+    if (cnf['REPORT']['COLLAPSE_STATUSES'] == true) {
+      report_md += "\n"
+      report_md += '<button id="newissues_button" onclick="toggle_div(' + "'" +'newissues' + "'" + ')">+</button> Expand/Collapse' + "\n"
+      report_md += "<div id='newissues' style='display: none;'>\n"
+    }
     report_md += "\n"
     report_md += json_to_md_table(new_issues_table)
     report_md += "\n"
+    if (cnf['REPORT']['COLLAPSE_STATUSES'] == true) {
+      report_md += "</div>\n"
+      report_md += "\n"
+    }
   } else {
     report_md += "\n"
     report_md += "- No issues were **Created** this week.\n"
@@ -755,7 +802,18 @@ report_md += '## Idle Issues' + "\n"
 report_md += idle_issues_table.length + " **Idle** issues.\n"
 report_md += "\n"
 if (idle_issues.length > 0) {
+  if (cnf['REPORT']['COLLAPSE_STATUSES'] == true) {
+    report_md += "\n"
+    report_md += '<button id="idleissues_button" onclick="toggle_div(' + "'" +'idleissues' + "'" + ')">+</button> Expand/Collapse' + "\n"
+    report_md += "<div id='idleissues' style='display: none;'>\n"
+  }
+  report_md += "\n"
   report_md += json_to_md_table(idle_issues_table)
+  report_md += "\n"
+  if (cnf['REPORT']['COLLAPSE_STATUSES'] == true) {
+    report_md += "</div>\n"
+    report_md += "\n"
+  }
 } else {
   report_md += "There are no Idle Issues in this report"
 }

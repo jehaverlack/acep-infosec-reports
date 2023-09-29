@@ -653,7 +653,109 @@
         }
     </style> -->
 
-    <script>
+    <!-- <style>
+      input[type=checkbox]{
+      	height: 0;
+      	width: 0;
+      	visibility: hidden;
+      }
+
+      label {
+      	cursor: pointer;
+      	text-indent: -9999px;
+      	width: 20px; /* from 200px */
+      	height: 10px; /* from 100px */
+      	background: grey;
+      	display: block;
+      	border-radius: 10px; /* from 100px */
+      	position: relative;
+      }
+
+      label:after {
+      	content: '';
+      	position: absolute;
+      	top: 0.5px; /* from 5px */
+      	left: 0.5px; /* from 5px */
+      	width: 9px; /* from 90px */
+      	height: 9px; /* from 90px */
+      	background: #fff;
+      	border-radius: 9px; /* from 90px */
+      	transition: 0.3s;
+      }
+
+      input:checked + label {
+      	background: #1e5c8d;
+      }
+
+      input:checked + label:after {
+      	left: calc(100% - 0.5px); /* from 5px */
+      	transform: translateX(-100%);
+      }
+
+      label:active:after {
+      	width: 13px; /* from 130px */
+      }
+      // centering
+      body {
+      	display: flex;
+      	justify-content: center;
+      	align-items: center;
+      	height: 100vh;
+      }
+    </style> -->
+
+    <!-- <style>
+        /* Your CSS styles here */
+
+        /* Hide the checkbox */
+        input[type=checkbox] {
+            display: none;
+        }
+
+        /* Default style for the label */
+        label {
+            cursor: pointer;
+            text-indent: -9999px;
+            width: 20px;
+            height: 10px;
+            background: grey;
+            display: block;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        /* Style for label when the checkbox is checked */
+        input[type=checkbox]:checked + label {
+            background: #1e5c8d;
+        }
+
+        /* Style for the adjacent myDiv when the checkbox is checked */
+        input[type=checkbox]:checked + label + #myDiv {
+            display: block;
+        }
+
+        /* Style for myDiv when the checkbox is not checked */
+        #myDiv {
+            display: none;
+        }
+
+        /* Style for myDiv content */
+        #myDiv p {
+            /* Add your styles for the content here */
+        }
+
+        /* Centering */
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+    </style> -->
+
+
+
+    <!-- <script>
       function toggle_div(eid) {
         var x = document.getElementById(eid);
         var y = document.getElementById(eid + '_button');
@@ -665,7 +767,7 @@
           y.innerHTML = '+';
         }
       }
-    </script>
+    </script> -->
 
   </head>
   <body>

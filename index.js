@@ -688,6 +688,22 @@ report_md += "\n"
 // report_md +='</div>' + "\n"
 // report_md += "\n"
 
+// report_md += "\n"
+// report_md += '<input type="checkbox" id="switch" /><label for="switch">Toggle</label>' +"\n"
+// report_md += "\n"
+// report_md +='<div id="myDiv" style="display: none;">' + "\n"
+// report_md +='    <p>Content goes here.</p>' + "\n"
+// report_md +='</div>' + "\n"
+// report_md += "\n"
+
+// report_md += "\n"
+// report_md += '<input type="checkbox" id="switch" />' + "\n"
+// report_md += '<label for="switch">Toggle</label>' + "\n"
+// report_md += "\n"
+// report_md += '<div id="myDiv">' + "\n"
+// report_md += '    <p>Content goes here.</p>' + "\n"
+// report_md += '</div>' + "\n"
+// report_md += "\n"
 
 // Weekly Highlights
 let highlights_table = issues_to_json_table(highlights)

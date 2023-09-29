@@ -7,13 +7,25 @@
     {
       "role": 5626154,
       "role_name": "Product Owner",
+      "full_name": "Dayne Broderson",
+      "full_name_display": "Dayne Broderson",
+      "is_active": true,
+      "id": 593179,
+      "color": "#65e383",
+      "username": "dayne-1",
+      "photo": null,
+      "gravatar_id": "c74d224bd6a2706b74dbc04924035bda"
+    },
+    {
+      "role": 5626154,
+      "role_name": "Product Owner",
       "full_name": "John Haverlack",
       "full_name_display": "John Haverlack",
       "is_active": true,
       "id": 557887,
       "color": "#46f603",
       "username": "jehaverlack",
-      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZRcdog%3AXYBqB_tg4NShQYngMzgVAc_OFUwszY4jJT66ay6vR_UaHYRCRi44pzXFzw8dJtl-VIUFZswKimgBjwojubTTAw",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZRdd7Q%3Axeh5SemVhZP0X_YBVVXDpMVhpEY3r60EPLqea19xwF2Cn_qcMHtkLpK2yWHKPKFJ23PfWrY5QKEU3msdQPVYng",
       "gravatar_id": "9b1774452ed43b230868b014e05a7225"
     }
   ],
@@ -85,9 +97,18 @@
       "slug": "pending"
     },
     {
+      "id": 7542951,
+      "name": "Blocked",
+      "order": 4,
+      "is_closed": false,
+      "project_id": 929309,
+      "color": "#E44057",
+      "slug": "blocked"
+    },
+    {
       "id": 6508943,
       "name": "Postponed",
-      "order": 4,
+      "order": 5,
       "is_closed": false,
       "project_id": 929309,
       "color": "#c00",
@@ -96,7 +117,7 @@
     {
       "id": 6508942,
       "name": "Rejected",
-      "order": 5,
+      "order": 6,
       "is_closed": true,
       "project_id": 929309,
       "color": "#A9AABC",
@@ -224,7 +245,7 @@
       "color": "#0b0"
     }
   ],
-  "issues_csv_uuid": "9d4267d52f564ed19149e1a7d8bb6992",
+  "issues_csv_uuid": "19be5b1540aa414080836f137894a601",
   "priorities": [
     {
       "id": 2790734,
@@ -329,6 +350,12 @@
     "ai": "#f70",
     "winter 23-24": "#ABD7E8",
     "uaf": "#5178D3",
-    "etf": "#51A3D3"
+    "etf": "#51A3D3",
+    "cec": "#51A3D3",
+    "adc": "#51A3D3",
+    "nsf": "#5178D3",
+    "onr": "#5178D3",
+    "dod": "#5178D3",
+    "cisa": "#51A3D3"
   }
 }

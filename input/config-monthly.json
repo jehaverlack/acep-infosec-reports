@@ -15,8 +15,8 @@
     "ORGANIZATION":"ACEP InfoSec",
     "LOGO":"INPUT_DIR/acep.png",
     "CONTEXT":"Cybersecurity",
-    "PERIOD":"Weekly",
-    "PERIOD_DAYS": 7,
+    "PERIOD":"Monthly",
+    "PERIOD_DAYS": 31,
     "COLLAPSE_STATUSES": false,
     "TAIGA_SLUG":"jehaverlack-acep-haverlack",
     "TAIGA_URL":"https://tree.taiga.io/project/TAIGA_SLUG/issues",
@@ -28,7 +28,7 @@
   "TABLE_COLS": {
     "id": "ID",
     "subject": "Subject",
-    "dc": "Organization",
+    "dc": "Project",
     "sa": "Department",
     "labels": "Tags",
     "type": "Type",
@@ -44,22 +44,15 @@
   },
   "DATA_CENTERS":{
     "acep": "Alaska Center for Energy and Power",
-    "adc":"Association for Defense Communities",
     "apa":"Alaska Power Association",
     "arctic":"Alaska Regional Collaboration for Technology Innovation and Commercialization",
     "abec":"Alaska Blue Economy Center",
     "ice":"Alaska Center for Innovation, Commercialization, and Entrepreneurship",
-    "cisa":"Cybersecurity & Infrastructure Security Agency",
-    "cec":"Cordova Electric Cooperative",
     "ced":"Center for Economic Development",
-    "dod":"Department of Defense",
     "eaton":"EATON",
-    "etf":"Energy Technology Facility",
     "fedora":"Fostering Energy Data Operational Resilience in Alaska",
     "kea":"Kotzebue Electric Association",
     "lnchak":"Launch Alaska",
-    "nsf":"National Science Foundation",
-    "onr":"Office of Naval Research",
     "reap":"Renewable Energy Alaska Project",
     "storm":"Data-Driven Approaches for Secure Electric Grids in Communities Disproportionately Impacted by Climate Change",
     "t3":"Teaching Through Technology",
@@ -77,7 +70,6 @@
     "web": "Web Team"
   },
   "OTHER_TAGS": {
-    "ai":"Artificial Intelligence",
     "ci": "Cyberinfrastructure",
     "it":"Information Technology",
     "dt":"End User Desktops",
@@ -86,9 +78,6 @@
     "itsm": "Information Techonology Service Management",
     "sddc": "Software Defined Data Center",
     "travel": "Travel",
-    "sbx": "Sandbox",
-    "onboarding":"Haverlack Onboarding Tasks",
-    "code":"Programing Related",
-    "winter 23-24":"Winter 23-24 ACEP InfoSec Sprint"
+    "sbx": "Sandbox"
   }
 }

@@ -469,6 +469,8 @@ report_md += "\n"
 
 // let json_issues_table = issues_to_json_table(issues)
 report_md += "\n"
+report_md += "---\n"
+report_md += "\n"
 report_md += '# Activity' + "\n"
 
 // report_md += "\n"
@@ -480,7 +482,7 @@ let legend_table = []
 // legend_table.push(ltval)
 
 let ltval = {}
-ltval['Legend'] = "Projects"
+ltval['Legend'] = "Organzations"
 ltval['Values'] = ''
 for (k in datacenters) {
   ltval['Values'] += '<span title="' + datacenters[k] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[k] + '">' + k + '</span> '
@@ -605,6 +607,19 @@ for (i in issues) {
   }
 }
 
+// Due in 30 Days
+let duein30_issues = []
+for (i in issues) {
+  if (issues[i]['ref'] != cnf['REPORT']['HEADER_ISSUE_NO'] && issues[i]['status'] != "Closed" && issues[i]['status'] != "Rejected") {
+    if (issues[i]['due_date']) {
+      let due = tell_time(issues[i]['due_date'])
+      if (Number(Number(due['UTC']['EPOCH'] - cnf['TIME']['NOW']['UTC']['EPOCH'])/(24*3600)) < 30) {
+        duein30_issues.push(issues[i])
+      }
+    }
+  }
+}
+
 // Closed
 let closed_issues = []
 for (i in issues) {
@@ -712,7 +727,7 @@ report_md += "---\n"
 // report_md += '## Weekly Highlights' + "\n"
 report_md += '<h2 style="background-color: #ff0;">Weekly Highlight Summary</h2>' + "\n"
 if (highlights_table.length > 0) {
-  report_md += highlights_table.length + " May 2023 Priority Issues.\n"
+  report_md += highlights_table.length + " Highlighted Issues.\n"
   report_md += "\n"
   report_md += json_to_md_table(highlights_table)
   report_md += "\n"
@@ -722,13 +737,42 @@ if (highlights_table.length > 0) {
 }
 
 
+
+
+let duein30_issues_table = issues_to_json_table_by_duedate(duein30_issues)
+report_md += "---\n"
+report_md += '## Due in &lt; 30 Days' + "\n"
+// report_md += "\n"
+// report_md += 'Issues with a soon due date.' + "\n"
+if (duein30_issues_table.length > 0) {
+  report_md += "\n"
+  report_md += duein30_issues_table.length + " issues due in &lt; 30 Days.\n"
+  report_md += "\n"
+  report_md += json_to_md_table(duein30_issues_table)
+  report_md += "\n"
+} else {
+  report_md += "\n"
+  report_md += " No issues Due in &lt; 30 Days.\n"
+  report_md += "\n"
+}
+
+
+
+report_md += '<div style="background-color: #ccc; width: 100%; height: 25px;"> </div>' + "\n"
+report_md += "\n"
+report_md += '# TLDR;' + "\n" 
+report_md += "\n"
+report_md += 'Please review the following reports per your interest.  They are include for completeness but are not necessary to review each week.' + "\n"
+report_md += "\n"
+
+
 // console.log("COLLAPSE_STATUSES: " + cnf['REPORT']['COLLAPSE_STATUSES'])
 
 // console.log(JSON.stringify(closed_issues, null, 2))
 // Closed
 let closed_issues_table = issues_to_json_table(closed_issues)
 // console.log(JSON.stringify(closed_issues_table, null, 2))
-report_md += "---\n"
+// report_md += "---\n"
 report_md += '## Closed Issues' + "\n"
 if (closed_issues_table.length > 0) {
   report_md += closed_issues_table.length + " issues **Closed** this week.\n"
@@ -925,10 +969,17 @@ function json_to_md_table(json_table) {
 }
 
 
-// Function Libraryies
+// Function Libraries
 function issues_to_json_table(issues) {
   // console.log('issues')
   // console.log(JSON.stringify(issues, null, 2))
+  let status_priority_map = {
+    "Urgent": 0,
+    "High": 1,
+    "Normal": 2,
+    "Low": 3
+  }
+
   let json_table = []
 
   let id_dc_map = [];
@@ -943,7 +994,7 @@ function issues_to_json_table(issues) {
                     type: String(item.type),
                     owner: String(item.owner),
                     severity: String(item.severity),
-                    priority: String(item.priority),
+                    priority: String(status_priority_map[item.priority]),
                     status: String(item.status),
                     due_date: String(item.due_date)
                   };
@@ -1083,6 +1134,261 @@ function issues_to_json_table(issues) {
 
   return json_table
 }
+
+
+function issues_to_json_table_by_duedate(issues) {
+  // console.log('issues')
+  // console.log(JSON.stringify(issues, null, 2))
+  let json_table = []
+
+  let id_dc_map = [];
+
+  issues.forEach(item => {
+    let map_obj = {
+                    // issuesid: item,
+                    id: item.id,
+                    subject: String(item.subject),
+                    dc: String(item.dc[0]),
+                    sa: String(item.sa[0]),
+                    type: String(item.type),
+                    owner: String(item.owner),
+                    severity: String(item.severity),
+                    priority: String(item.priority),
+                    status: String(item.status),
+                    due_date: String(item.due_date)
+                  };
+    id_dc_map.push(map_obj)
+  });
+
+  for (idx in id_dc_map) {
+    id_dc_map[idx]['idx'] = idx
+  }
+
+
+  // id_dc_map.sort((a, b) => {
+  //   // First, compare by dc
+  //   if (a.dc.toUpperCase() < b.dc.toUpperCase()) {
+  //     return -1;
+  //   } else if (a.dc.toUpperCase() > b.dc.toUpperCase()) {
+  //     return 1;
+  //   } else {
+  //     // If dc values are equal, compare by sa
+  //     if (a.sa && b.sa) {
+  //       if (a.sa.toUpperCase() < b.sa.toUpperCase()) {
+  //         return -1;
+  //       } else if (a.sa.toUpperCase() > b.sa.toUpperCase()) {
+  //         return 1;
+  //       } else {
+  //         return 0;
+  //       }
+  //     } else if (a.sa) {
+  //       return -1;
+  //     } else if (b.sa) {
+  //       return 1;
+  //     } else {
+  //       return 0;
+  //     }
+  //   }
+  // });
+
+  id_dc_map.sort((a, b) => {
+    // First, compare by priority
+    if (a.due_date.toUpperCase() < b.due_date.toUpperCase()) {
+      return -1;
+    } else if (a.due_date.toUpperCase() > b.due_date.toUpperCase()) {
+      return 1;
+    } else {
+      // If due_date values are equal, compare by status
+      if (a.status && b.status) {
+        if (a.status.toUpperCase() < b.status.toUpperCase()) {
+          return -1;
+        } else if (a.status.toUpperCase() > b.status.toUpperCase()) {
+          return 1;
+        } else {
+          return 0;
+        }
+      } else if (a.status) {
+        return -1;
+      } else if (b.status) {
+        return 1;
+      } else {
+        return 0;
+      }
+    }
+  });
+
+  // console.log('Sorting:....')
+  // console.log('id_dc_map')
+  // console.log(JSON.stringify(id_dc_map, null, 2))
+  // console.log(JSON.stringify(id_dc_map_sorted, null, 2))
+
+  // console.log(JSON.stringify(issues, null, 2))
+
+
+  // for (i in issues) {
+  for (idx in id_dc_map) {
+    let i = id_dc_map[idx]['idx']
+    let row = {}
+    for (k in sub_keys) {
+      // if (sub_keys.hasOwnProperty(k)) {
+
+      // console.log(i + ' ' + k + ' ' + sub_keys[k])
+        switch (k) {
+          case 'id':
+            row[sub_keys[k]] = '[' + issues[i]['ref'] + '](' + ticket_base_url + issues[i]['ref'] +  ')'
+            break;
+          case 'subject':
+            row[sub_keys[k]] = '[' + issues[i][k] + '](' + ticket_base_url + issues[i]['ref'] +  ')'
+            break;
+          case 'dc':
+            let dcs = ''
+            for (dc in issues[i][k]) {
+               // dcs += '<span style="color: ' + tags_map[ issues[i][k][dc] ] + '">' + datacenters[ issues[i][k][dc] ] + '</span> '
+
+               dcs += '<span title="' + datacenters[ issues[i][k][dc] ] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[issues[i][k][dc]] + '">' + issues[i][k][dc] + '</span>'
+            }
+            row[sub_keys[k]] = dcs
+            break;
+          case 'sa':
+            let sas = ''
+            for (sa in issues[i][k]) {
+               // sas += '<span style="color: ' + tags_map[ issues[i][k][sa] ] + '">' + service_areas[ issues[i][k][sa] ] + '</span> '
+
+               sas += '<span title="' + service_areas[ issues[i][k][sa] ] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[issues[i][k][sa]] + '">' + issues[i][k][sa] + '</span>'
+            }
+            row[sub_keys[k]] = sas
+            break;
+          case 'labels':
+            let lbl = ''
+            for (l in issues[i][k]) {
+               // lbl += '<span style="color: ' + tags_map[ issues[i][k][l] ] + '">' + issues[i][k][l] + '</span> '
+
+               lbl += '<span title="' + other_tags[ issues[i][k][l] ] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[issues[i][k][l]] + '">' + issues[i][k][l] + '</span>'
+            }
+            row[sub_keys[k]] = lbl
+            break;          case 'priority':
+            row[sub_keys[k]] = '<span style="color: ' + priority_map[ issues[i][k] ] + '">' + issues[i][k] + '</span>'
+            break;
+          case 'status':
+            row[sub_keys[k]] = '<span style="color: ' + status_map[ issues[i][k] ] + '">' + issues[i][k] + '</span>'
+            break;
+          case 'severity':
+            row[sub_keys[k]] = '<span style="color: ' + severity_map[ issues[i][k] ] + '">' + issues[i][k] + '</span>'
+            break;
+          case 'type':
+            row[sub_keys[k]] = '<span style="color: ' + type_map[ issues[i][k] ] + '">' + issues[i][k] + '</span>'
+            break;
+          case 'watchers':
+            row[sub_keys[k]] = people_map[ issues[i][k] ]
+            break;
+          default:
+            row[sub_keys[k]] = issues[i][k]
+        }
+      // }
+    }
+    json_table.push(row)
+  }
+
+  // console.log(JSON.stringify(json_table, null, 2))
+
+  return json_table
+}
+
+
+
+// function issues_to_json_table_by_duedate(issues) {
+//   let json_table = []
+//
+//   let id_dc_map = [];
+//
+//   issues.forEach(item => {
+//     let map_obj = {
+//                     // issuesid: item,
+//                     id: item.id,
+//                     due_date: String(item.due_date),
+//                     // dc: item.dc[0],
+//                     // sa: item.sa[0],
+//                     // status: item.status[0],
+//                   };
+//     id_dc_map.push(map_obj)
+//   });
+//
+//   for (idx in id_dc_map) {
+//     id_dc_map[idx]['idx'] = idx
+//   }
+//
+// // console.log(JSON.stringify(id_dc_map, null, 2))
+//
+//   id_dc_map.sort((a, b) => {
+//     if (a.due_date.toUpperCase() < b.due_date.toUpperCase()) {
+//       return -1;
+//     } else if (a.due_date.toUpperCase() > b.due_date.toUpperCase()) {
+//       return 1;
+//     }
+//   });
+//
+//   // console.log(JSON.stringify(id_dc_map, null, 2))
+//
+//   // for (i in issues) {
+//   for (idx in id_dc_map) {
+//     let i = id_dc_map[idx]['idx']
+//     let row = {}
+//     for (k in sub_keys) {
+//       // if (sub_keys.hasOwnProperty(k)) {
+//
+//       // console.log(i + ' ' + k + ' ' + sub_keys[k])
+//         switch (k) {
+//           case 'id':
+//             row[sub_keys[k]] = '[' + issues[i]['ref'] + '](' + ticket_base_url + issues[i]['ref'] +  ')'
+//             break;
+//           case 'subject':
+//             row[sub_keys[k]] = '[' + issues[i][k] + '](' + ticket_base_url + issues[i]['ref'] +  ')'
+//             break;
+//           case 'dc':
+//             let dcs = ''
+//             for (dc in issues[i][k]) {
+//                dcs += '<span style="color: ' + tags_map[ issues[i][k][dc] ] + '">' + datacenters[ issues[i][k][dc] ] + '</span> '
+//             }
+//             row[sub_keys[k]] = dcs
+//             break;
+//           case 'sa':
+//             let sas = ''
+//             for (sa in issues[i][k]) {
+//                sas += '<span style="color: ' + tags_map[ issues[i][k][sa] ] + '">' + service_areas[ issues[i][k][sa] ] + '</span> '
+//             }
+//             row[sub_keys[k]] = sas
+//             break;
+//           case 'labels':
+//             let lbl = ''
+//             for (l in issues[i][k]) {
+//                lbl += '<span style="color: ' + tags_map[ issues[i][k][l] ] + '">' + issues[i][k][l] + '</span> '
+//             }
+//             row[sub_keys[k]] = lbl
+//             break;
+//           case 'priority':
+//             row[sub_keys[k]] = '<span style="color: ' + priority_map[ issues[i][k] ] + '">' + issues[i][k] + '</span>'
+//             break;
+//           case 'status':
+//             row[sub_keys[k]] = '<span style="color: ' + status_map[ issues[i][k] ] + '">' + issues[i][k] + '</span>'
+//             break;
+//           case 'severity':
+//             row[sub_keys[k]] = '<span style="color: ' + severity_map[ issues[i][k] ] + '">' + issues[i][k] + '</span>'
+//             break;
+//           case 'type':
+//             row[sub_keys[k]] = '<span style="color: ' + type_map[ issues[i][k] ] + '">' + issues[i][k] + '</span>'
+//             break;
+//           default:
+//             row[sub_keys[k]] = issues[i][k]
+//         }
+//       // }
+//     }
+//     json_table.push(row)
+//   }
+//
+//   // console.log(JSON.stringify(json_table, null, 2))
+//
+//   return json_table
+// }
 
 
 function stats_to_json_table(stats) {

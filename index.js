@@ -407,8 +407,8 @@ for (i in issues) {
 
 
 
-
 // console.log(JSON.stringify(issues, null, 2))
+
 // console.log(JSON.stringify(report_json, null, 2))
 // console.log(JSON.stringify(report_stats, null, 2))
 
@@ -425,10 +425,12 @@ for (i in issues) {
 
 report_md += "\n"
 // report_md += '# ' + cnf['REPORT']['ORGANIZATION'] + ': ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + ' Weekly Report' + "\n"
-report_md += '# ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + ' Weekly Report' + "\n"
+report_md += '# ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + ' ACEP InfoSec Weekly Report' + "\n"
 report_md += '- **Report Period:** ' + cnf['TIME']['START']['LOCAL']['YYYY-MM-DD'] + ' to ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + "\n"
 report_md += '- **Issues:** [' + cnf['REPORT']['ORGANIZATION'] + ' ' + cnf['REPORT']['CONTEXT'] + ' Issues](' + cnf['REPORT']['TAIGA_URL'] + ')' + "\n"
 report_md += '- **Support Contact:** Please send support requests to:' + '<a href="mailto:' + cnf['REPORT']['CONTACT_EMAIL'] +'">' + cnf['REPORT']['CONTACT_EMAIL'] +'</a>' + "\n"
+report_md += "\n"
+report_md += "---\n"
 report_md += "\n"
 
 // Summary
@@ -493,7 +495,7 @@ ltval['Values'] = ltval['Values'].replace(RegExp(', $'), '')
 legend_table.push(ltval)
 
 ltval = {}
-ltval['Legend'] = "Departments"
+ltval['Legend'] = "Serice Area"
 ltval['Values'] = ''
 for (k in service_areas) {
   ltval['Values'] += '<span title="' + service_areas[k] + '" style="color: #fff; border-radius: 2px; padding-top: 0.1rem; padding-right: 0.5rem; padding-bottom: 0.1rem; padding-left: 0.5rem; background-color: ' + tags_colors[k] + '">' + k + '</span> '
@@ -758,11 +760,11 @@ if (duein30_issues_table.length > 0) {
 
 
 
-report_md += '<div style="background-color: #ccc; width: 100%; height: 25px;"> </div>' + "\n"
+report_md += '<div style="background-color: #ccc; width: 100%; height: 25px;"><h1>TLDR</h1></div>' + "\n"
+// report_md += "\n"
+// report_md += '# TLDR;' + "\n"
 report_md += "\n"
-report_md += '# TLDR;' + "\n" 
-report_md += "\n"
-report_md += 'Please review the following reports per your interest.  They are include for completeness but are not necessary to review each week.' + "\n"
+report_md += '<span style="background-color: #ff0;">Please review the following reports per your interest.  They are include for completeness but are not necessary to review each week.</span>' + "\n"
 report_md += "\n"
 
 
@@ -1080,6 +1082,12 @@ function issues_to_json_table(issues) {
             break;
           case 'subject':
             row[sub_keys[k]] = '[' + issues[i][k] + '](' + ticket_base_url + issues[i]['ref'] +  ')'
+            if (summary = issues[i]['description'].match(RegExp('^> (.*)'))) {
+              // row[sub_keys[k]] = '<a title="' + summary[1] + '" href="' + ticket_base_url + issues[i]['ref']  + '">' + issues[i][k] + '</a>'
+              row[sub_keys[k]] = '<a href="' + ticket_base_url + issues[i]['ref']  + '">' + issues[i][k] + '</a> <br><div style="width:400px;">' + summary[1] + '</div>'
+            } else {
+              row[sub_keys[k]] = '[' + issues[i][k] + '](' + ticket_base_url + issues[i]['ref'] +  ')'
+            }
             break;
           case 'dc':
             let dcs = ''
@@ -1238,8 +1246,13 @@ function issues_to_json_table_by_duedate(issues) {
             row[sub_keys[k]] = '[' + issues[i]['ref'] + '](' + ticket_base_url + issues[i]['ref'] +  ')'
             break;
           case 'subject':
+          row[sub_keys[k]] = '[' + issues[i][k] + '](' + ticket_base_url + issues[i]['ref'] +  ')'
+          if (summary = issues[i]['description'].match(RegExp('^> (.*)'))) {
+            // row[sub_keys[k]] = '<a title="' + summary[1] + '" href="' + ticket_base_url + issues[i]['ref']  + '">' + issues[i][k] + '</a>'
+            row[sub_keys[k]] = '<a href="' + ticket_base_url + issues[i]['ref']  + '">' + issues[i][k] + '</a> <br><div style="width:400px;">' + summary[1] + '</div>'
+          } else {
             row[sub_keys[k]] = '[' + issues[i][k] + '](' + ticket_base_url + issues[i]['ref'] +  ')'
-            break;
+          }            break;
           case 'dc':
             let dcs = ''
             for (dc in issues[i][k]) {

@@ -25,7 +25,7 @@
       "id": 557887,
       "color": "#46f603",
       "username": "jehaverlack",
-      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZRdd7Q%3Axeh5SemVhZP0X_YBVVXDpMVhpEY3r60EPLqea19xwF2Cn_qcMHtkLpK2yWHKPKFJ23PfWrY5QKEU3msdQPVYng",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZTMACg%3ASxWDdlZE2e8LOCOrIM0GgO9rBQJZQxbSbo5G33f_ynYTfPJu3FfIvkBdEyJgwaraJFLW1ye5AC21fSbuWx4VQg",
       "gravatar_id": "9b1774452ed43b230868b014e05a7225"
     }
   ],
@@ -89,30 +89,30 @@
     },
     {
       "id": 7247649,
-      "name": "Pending",
+      "name": "Paused",
       "order": 3,
       "is_closed": false,
       "project_id": 929309,
       "color": "#e80",
-      "slug": "pending"
-    },
-    {
-      "id": 7542951,
-      "name": "Blocked",
-      "order": 4,
-      "is_closed": false,
-      "project_id": 929309,
-      "color": "#E44057",
-      "slug": "blocked"
+      "slug": "paused"
     },
     {
       "id": 6508943,
       "name": "Postponed",
-      "order": 5,
+      "order": 4,
       "is_closed": false,
       "project_id": 929309,
       "color": "#c00",
       "slug": "postponed"
+    },
+    {
+      "id": 7731390,
+      "name": "Blocked",
+      "order": 5,
+      "is_closed": false,
+      "project_id": 929309,
+      "color": "#f00",
+      "slug": "blocked"
     },
     {
       "id": 6508942,
@@ -245,7 +245,7 @@
       "color": "#0b0"
     }
   ],
-  "issues_csv_uuid": "19be5b1540aa414080836f137894a601",
+  "issues_csv_uuid": "532f8cc10d20447d82d09310c43d52d4",
   "priorities": [
     {
       "id": 2790734,
@@ -356,6 +356,10 @@
     "nsf": "#5178D3",
     "onr": "#5178D3",
     "dod": "#5178D3",
-    "cisa": "#51A3D3"
+    "cisa": "#51A3D3",
+    "fend": "#51A3D3",
+    "nist": "#5178D3",
+    "nts": "#D3AC50",
+    "reporting": "#D3AC50"
   }
 }

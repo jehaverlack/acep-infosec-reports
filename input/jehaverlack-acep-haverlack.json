@@ -25,7 +25,7 @@
       "id": 557887,
       "color": "#46f603",
       "username": "jehaverlack",
-      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZTMACg%3ASxWDdlZE2e8LOCOrIM0GgO9rBQJZQxbSbo5G33f_ynYTfPJu3FfIvkBdEyJgwaraJFLW1ye5AC21fSbuWx4VQg",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZU6ziw%3Ac9PACntqYkO9kWVITW6W6X9aV8IviUjYP2x58YWR7T03nvwzJvlDvJu8nf09AqPznE4DuAa9EdvvBJi4l-spLw",
       "gravatar_id": "9b1774452ed43b230868b014e05a7225"
     }
   ],
@@ -245,7 +245,7 @@
       "color": "#0b0"
     }
   ],
-  "issues_csv_uuid": "532f8cc10d20447d82d09310c43d52d4",
+  "issues_csv_uuid": "544a633741de40e9a1997bc863d1b203",
   "priorities": [
     {
       "id": 2790734,
@@ -360,6 +360,9 @@
     "fend": "#51A3D3",
     "nist": "#5178D3",
     "nts": "#D3AC50",
-    "reporting": "#D3AC50"
+    "reporting": "#D3AC50",
+    "bess": "#51A3D3",
+    "grip": "#51A3D3",
+    "workforce development": "#51D381"
   }
 }

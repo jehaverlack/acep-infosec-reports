@@ -81,7 +81,8 @@
     "hr":"Human Resources",
     "reporting":"Reporting Activities",
     "research": "Research Support",
-    "web": "Web Team"
+    "web": "Web Team",
+    "workforce development": "Workforce Development" 
   },
   "OTHER_TAGS": {
     "ai":"Artificial Intelligence",

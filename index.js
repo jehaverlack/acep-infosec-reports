@@ -735,7 +735,7 @@ if (highlights_table.length > 0) {
   report_md += "\n"
 } else {
   report_md += "\n"
-  report_md += "- No issues were **May 2023 Priority** issues.\n"
+  report_md += "- No issues were **tags for Highights** issues.\n"
 }
 
 

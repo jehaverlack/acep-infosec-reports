@@ -47,15 +47,19 @@
     "apa":"Alaska Power Association",
     "arctic":"Alaska Regional Collaboration for Technology Innovation and Commercialization",
     "abec":"Alaska Blue Economy Center",
-    "ice":"Alaska Center for Innovation, Commercialization, and Entrepreneurship",
+    "c3ai":"C3.AI",
     "cisa":"Cybersecurity & Infrastructure Security Agency",
+    "cise":"NSF Computer Information Science & Engineering",
     "cec":"Cordova Electric Cooperative",
     "ced":"Center for Economic Development",
     "dod":"Department of Defense",
+    "doe":"Department of Energy",
     "eaton":"EATON",
     "etf":"Energy Technology Facility",
     "fedora":"Fostering Energy Data Operational Resilience in Alaska",
     "fend":"Fend Incorporated",
+    "ice":"Alaska Center for Innovation, Commercialization, and Entrepreneurship",
+    "grip":"Grid Resilience and Innovation Partnerships",
     "kea":"Kotzebue Electric Association",
     "lnchak":"Launch Alaska",
     "nist":"National Insititute for Standards and Technology",
@@ -63,6 +67,7 @@
     "nts":"UAF Nanook Technology Services",
     "oit": "UA Office of Information Technology",
     "onr":"Office of Naval Research",
+    "rcs":"UAF Research Computing Systems",
     "reap":"Renewable Energy Alaska Project",
     "storm":"Data-Driven Approaches for Secure Electric Grids in Communities Disproportionately Impacted by Climate Change",
     "t3":"Teaching Through Technology",
@@ -70,6 +75,7 @@
     "uaf":"University of Alaska Fairbanks"
   },
   "SERVICE_AREAS": {
+    "bess":"Battery Energy Storage Systems",
     "infosec": "Infomation Security",
     "ci": "Cyberinfrastructure",
     "it":"Information Technology",
@@ -82,7 +88,7 @@
     "reporting":"Reporting Activities",
     "research": "Research Support",
     "web": "Web Team",
-    "workforce development": "Workforce Development" 
+    "workforce development": "Workforce Development"
   },
   "OTHER_TAGS": {
     "ai":"Artificial Intelligence",

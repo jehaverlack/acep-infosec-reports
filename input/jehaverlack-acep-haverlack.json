@@ -25,7 +25,7 @@
       "id": 557887,
       "color": "#46f603",
       "username": "jehaverlack",
-      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZU6ziw%3Ac9PACntqYkO9kWVITW6W6X9aV8IviUjYP2x58YWR7T03nvwzJvlDvJu8nf09AqPznE4DuAa9EdvvBJi4l-spLw",
+      "photo": "https://media-protected.taiga.io/user/d/7/1/2/34c2fd515aa073af44a87f48dc465dae2d4811f6723a468ac6c571b870f5/me2-cropped-sm.jpg.80x80_q85_crop.jpg?token=ZaAqzw%3AZU6Tpei6ybFMdyEmjHRuOjbZGyXZdl4aHDDClsBsIrlWDreimPoOrivIzPYhBQhOL-6bAahPklmFOCLjrJSSDQ",
       "gravatar_id": "9b1774452ed43b230868b014e05a7225"
     }
   ],
@@ -210,42 +210,49 @@
       "color": "#f00"
     },
     {
+      "id": 4565412,
+      "name": "Security Review",
+      "order": 12,
+      "project_id": 929309,
+      "color": "#c00"
+    },
+    {
       "id": 2797234,
       "name": "Documentation",
-      "order": 12,
+      "order": 13,
       "project_id": 929309,
       "color": "#090"
     },
     {
       "id": 2820169,
       "name": "Training",
-      "order": 13,
+      "order": 14,
       "project_id": 929309,
       "color": "#78D351"
     },
     {
       "id": 3113673,
       "name": "Reading",
-      "order": 14,
+      "order": 15,
       "project_id": 929309,
       "color": "#00aa00"
     },
     {
       "id": 2820165,
       "name": "Coding",
-      "order": 15,
+      "order": 16,
       "project_id": 929309,
       "color": "#060"
     },
     {
       "id": 3114058,
       "name": "Procurement",
-      "order": 16,
+      "order": 17,
       "project_id": 929309,
       "color": "#0b0"
     }
   ],
-  "issues_csv_uuid": "544a633741de40e9a1997bc863d1b203",
+  "issues_csv_uuid": "e2af7d5a279f41acab6f23fffc7e6510",
   "priorities": [
     {
       "id": 2790734,
@@ -363,6 +370,10 @@
     "reporting": "#D3AC50",
     "bess": "#51A3D3",
     "grip": "#51A3D3",
-    "workforce development": "#51D381"
+    "workforce development": "#51D381",
+    "rcs": "#51A3D3",
+    "doe": "#5178D3",
+    "c3ai": "#51A3D3",
+    "cise": "#5178D3"
   }
 }

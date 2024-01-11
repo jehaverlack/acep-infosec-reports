@@ -1,12 +1,10 @@
-# CFOS IT Taiga Support Request Report Generator Script
+# ACEP Taiga Support Request Report Generator Script
 
-## CFOS IT Support Request Issues
+## ACEP Support Request Issues
 
-- [https://tree.taiga.io/project/jbbaugher-2023-summer-cfos-it-support/issues](https://tree.taiga.io/project/jbbaugher-2023-summer-cfos-it-support/issues)
+This script will generate HTML reports for based on Taiga issues for a given Taiga project.
 
-This script will generate HTML reports for based on the above Taiga tickets.
-
-![cfosit-reports](input/cfosit-report-tn.png)
+![Reports Example](input/TaigaReportExample.png)
 
 
 ## Pre-Requisites
@@ -22,9 +20,9 @@ Install the following software on your local computer.
 - rename the jq-win64.exe binary to jq.exe
 - move jq.exe to C:\Program Files\Git\usr\bin
 
-## Cloning cfosit-reports
+## Cloning - Install acep-infosec-reports
 
-- [https://github.alaska.edu/cfos/cfosit-reports](https://github.alaska.edu/cfos/cfosit-reports)
+- [git@github.com:jehaverlack/acep-infosec-reports.git](https://github.com/jehaverlack/acep-infosec-reports)
 
 1. Open a Git Bash terminal window.
 2. Change directory to your **Documents** or other directory of your choosing:
@@ -33,17 +31,17 @@ Install the following software on your local computer.
 cd Documents
 ```
 
-3. Clone the cfosit-reports
+3. Clone the acep-infosec-reports
 
 ```
-git clone https://github.alaska.edu/cfos/cfosit-reports.git
+git clone git@github.com:jehaverlack/acep-infosec-reports.git
 ```
 
 
 4. Install NPM Dependancies
 
 ```
-cd cfosit-reports
+cd acep-infosec-reports
 ```
 
 ```
@@ -55,27 +53,81 @@ npm install
 - copy input/api-credentials-example.json to input/api-credentials.json
 - edit input/api-credentials.json with your Taiga Username and Password
 
+### Configure Your Taiga Project
+
+Get the URL from your TAIGA Project issues, e.g.:
+```
+https://tree.taiga.io/project/jehaverlack-acep-haverlack/issues?order_by=-modified_date
+```
+
+The Taiga SLUG in the above URL is:  **jehaverlack-acep-haverlack**
+
+#### Create a Header Issue
+
+In your Taiga Project create a new ticket. The description of this ticket will be used to populate the top of the report to highlight any specific points of interest.  You'll need the Issue Number for this issue in the report config as follows.
+
+#### Edit: input/config.json
+
+Update Custom values for the Report:
+
+-  **REPORT > TAIGA_SLUG**
+-  **REPORT > ORGANIZATION**
+-  **REPORT > CONTEXT**
+-  **REPORT > PERIOD**
+-  **REPORT > PERIOD_DAYS**
+-  **REPORT > HEADER_ISSUE_NO**
+
+```
+{
+  "DIRS": {
+    "INPUT_DIR":"DIRNAME/input",
+ ...
+    "REPORT_DIR":"DIRNAME/reports"
+  },
+  "FILES": {
+    "INPUT_CSV":"INPUT_DIR/issues-acep-infosec.csv",
+...
+    "HTML_FOOTER":"INPUT_DIR/foot.html"
+  },
+  "REPORT":{
+    "ORGANIZATION":"ACEP InfoSec",
+    "LOGO":"INPUT_DIR/acep.png",
+    "CONTEXT":"Cybersecurity",
+    "PERIOD":"Weekly",
+    "PERIOD_DAYS": 7,
+    "COLLAPSE_STATUSES": false,
+    "TAIGA_SLUG":"jehaverlack-acep-haverlack",
+    "TAIGA_URL":"https://tree.taiga.io/project/TAIGA_SLUG/issues",
+    "TAIGA_TICKET_BASE_URL":"https://tree.taiga.io/project/TAIGA_SLUG/issue/",
+    "TAIGA_API_URL":"https://api.taiga.io/api/v1/",
+    "HEADER_ISSUE_NO":"40",
+    "CONTACT_EMAIL":"uaf-acep-infosec@alaska.edu"
+  },
+```
+
+
+
 
 ## Generating a Weekly Report
 
 ### Update the Report Header Issue
 
 1. Goto Issue 27: [https://tree.taiga.io/project/jbbaugher-2023-summer-cfos-it-support/issue/27](https://tree.taiga.io/project/jbbaugher-2023-summer-cfos-it-support/issue/27)
-2. Update the **CFOS IT Report Header** Description with updated information for this weeks report.
+2. Update the **ACEP Report Header** Description with updated information for this weeks report.
 
 ###  Export Taiga CSV
 
 1. Goto: [https://tree.taiga.io/project/jbbaugher-2023-summer-cfos-it-support/issues](https://tree.taiga.io/project/jbbaugher-2023-summer-cfos-it-support/issues)
 2. Goto: **Settings** > **Project** > **Reports**
 3. **Regenerate** the **Issues Report**
-<!-- 4. Click **DOWNLOAD CSV**  and save to the **cfosit-reports/input** directory with filename **issues-cfosit.csv** -->
+<!-- 4. Click **DOWNLOAD CSV**  and save to the **acep-infosec-reports/input** directory with filename **issues-cfosit.csv** -->
 
 ### Generate the Report
 
 1. 1. Open a Git Bash terminal window.
-2. Change directory to your **cfosit-reports** directory
+2. Change directory to your **acep-infosec-reports** directory
 ```
-cd Documents/cfosit-reports
+cd Documents/acep-infosec-reports
 ```
 3. Run the **gen_report.sh** script.
 ```
@@ -85,7 +137,7 @@ cd Documents/cfosit-reports
 ### Viewing the Report:
 
 1. Point your browser to:
-- [file:///HOME_DIR/Documents/cfosit-reports/reports](file:///HOME_DIR/Documents/cfosit-reports/reports)
+- [file:///HOME_DIR/Documents/acep-infosec-reports/reports](file:///HOME_DIR/Documents/acep-infosec-reports/reports)
 2. Click on the latest report HTML file.
 
 ### Print to PDF
@@ -100,7 +152,7 @@ cd Documents/cfosit-reports
 
 1. Copy the HTML content of the report and paste in the Email message.
 2. Attache the PDF version of the report.
-3. Copy the Report Subject, e.g.:  _CFOS IT: 2023-04-07 Weekly Report_
+3. Copy the Report Subject, e.g.:  _ACEP: 2023-04-07 Weekly Report_
 4. Send to: jehaverlack@alaska.edu, jbbaugher@alaska.edu, jhsimonson@alaska.edu, tbuzzek@alaska.edu, tsshambare@alaska.edu, dkqueen@alaska.edu, sbmoran@alaska.edu, uaf-cfos-bof@alaska.edu
 
 
@@ -108,7 +160,7 @@ cd Documents/cfosit-reports
 
 ## Edit input/config.json
 
-1. Create a new Report Header Ticket in the new Taiga Instance 
+1. Create a new Report Header Ticket in the new Taiga Instance
 1. update: REPORT : TAIGA_SLUG
 1. update: REPORT: HEADER_ISSUE_NO
 
@@ -127,7 +179,7 @@ cd Documents/cfosit-reports
     "HTML_FOOTER":"INPUT_DIR/foot.html"
   },
   "REPORT":{
-    "ORGANIZATION":"CFOS IT",
+    "ORGANIZATION":"ACEP",
     "LOGO":"INPUT_DIR/cfos.png",
     "CONTEXT":"Support Requests",
     "PERIOD":"Weekly",
@@ -158,7 +210,7 @@ cd Documents/cfosit-reports
     "skq": "Sikuliaq",
     "smc": "Seward Marine Center",
     "cfos": "College of Fisheries and Ocean Sciences",
-    "cfos it": "CFOS Information Techology"
+    "ACEP": "CFOS Information Techology"
   },
   "SERVICE_AREAS": {
     "ci": "Cyberinfrastructure",

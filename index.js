@@ -3,7 +3,27 @@ const path    = require('path')
 const os    = require('os')
 const marked  = require('marked')
 
-var cnf = JSON.parse(fs.readFileSync(path.join(__dirname, 'input', 'config.json'), 'utf8'))
+// Default configuration file path
+let configFilePath = path.join(__dirname, 'input', 'config.json');
+
+// Check if an argument is passed
+if (process.argv.length > 2) {
+    const potentialPath = process.argv[2];
+    // Create absolute path if not already
+    const absolutePath = path.isAbsolute(potentialPath) ? potentialPath : path.join(__dirname, potentialPath);
+
+    // Check if the provided path is a file
+    if (fs.existsSync(absolutePath) && fs.lstatSync(absolutePath).isFile()) {
+        configFilePath = absolutePath;
+    } else {
+        console.error(`Error: '${absolutePath}' does not exist or is not a regular file.`);
+        process.exit(1);
+    }
+}
+
+// Read and parse the configuration file
+var cnf = JSON.parse(fs.readFileSync(configFilePath, 'utf8'));
+// var cnf = JSON.parse(fs.readFileSync(path.join(__dirname, 'input', 'config.json'), 'utf8'))
 
 var dir_maps = {
   "DIRNAME": __dirname,
@@ -425,7 +445,7 @@ for (i in issues) {
 
 report_md += "\n"
 // report_md += '# ' + cnf['REPORT']['ORGANIZATION'] + ': ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + ' Weekly Report' + "\n"
-report_md += '# ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + ' ACEP InfoSec Weekly Report' + "\n"
+report_md += '# ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + ' ACEP InfoSec ' + cnf['REPORT']['PERIOD'] + ' Report' + "\n"
 report_md += '- **Report Period:** ' + cnf['TIME']['START']['LOCAL']['YYYY-MM-DD'] + ' to ' + cnf['TIME']['NOW']['LOCAL']['YYYY-MM-DD'] + "\n"
 report_md += '- **Issues:** [' + cnf['REPORT']['ORGANIZATION'] + ' ' + cnf['REPORT']['CONTEXT'] + ' Issues](' + cnf['REPORT']['TAIGA_URL'] + ')' + "\n"
 report_md += '- **Support Contact:** Please send support requests to:' + '<a href="mailto:' + cnf['REPORT']['CONTACT_EMAIL'] +'">' + cnf['REPORT']['CONTACT_EMAIL'] +'</a>' + "\n"

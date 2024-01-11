@@ -161,5 +161,4 @@ By default the Report Period is **Weekly**.  You can customize this by passing a
 2. Attache the PDF version of the report.
 3. Copy the Report Subject, e.g.:  _ACEP: 2023-04-07 Weekly Report_
 
-# Updating Configuration for a New Tiaga Project
 

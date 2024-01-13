@@ -176,7 +176,7 @@ Develop a ready to use Research Security solution that is easy for PI's to adopt
 
 I've contacted support on how best to resolve this issue.",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Closed,Normal,High,Task,True,0,,"data,web,acep,onboarding",[557887],0,2023-09-13 16:43:10.104567+00:00,2023-09-21 18:05:54.344606+00:00,2023-09-18 16:55:51.025117+00:00,,
 1658614,22,Neo4j,Learn how to load and analyze data with Neo4j,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Paused,Normal,High,Training,False,0,,"acep,ci,infosec,winter 23-24",[],0,2023-09-13 16:45:18.137462+00:00,2023-10-02 17:15:27.264141+00:00,,,
-1658615,23,Demo: Snipeit Asset Management,> Proof of Concept Sandbox testing of the SnipeIt Asset Management database.  Working on LDAP integration for account auth.,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Normal,High,Project,False,0,,"infosec,sbx,winter 23-24",[],0,2023-09-13 16:45:48.585664+00:00,2023-10-20 22:22:43.913029+00:00,,,
+1658615,23,Demo: Snipeit Asset Management,> Proof of Concept Sandbox testing of the [SnipeIt Asset Management](https://10.25.159.135/) database.  Working on LDAP integration for account auth.,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Normal,High,Training,False,0,,"infosec,sbx,winter 23-24",[],0,2023-09-13 16:45:48.585664+00:00,2024-01-13 01:16:51.169444+00:00,,,
 1658616,24,ACEP Deb 12 Ansible Baseline,,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,New,Normal,Low,Project,False,0,,"sbx,ci",[],0,2023-09-13 16:46:06.720100+00:00,2023-09-15 22:50:43.147067+00:00,,,
 1658617,25,Demo IdM / LDAP server,"> COMPLETED: A working Infosec SandboxOpen LDAP server with LAM WUI.  This is one of several Identity Management test systems.
 
@@ -278,15 +278,13 @@ Wanted to get a thread started on this topic .. I have a half assed method for n
 1660012,40,Infosec Report Headers,"Schedule Events
 ---------------
 
-### John will be out of the office Dec 14 - Jan 5
+*   Jan 16-19 - [ACEP Cyber/Data Team Onsite for Planning / Team Building](https://docs.google.com/document/d/145OYLIaAVBP9h_UNZokvTaeMcutqaan9NCLAVnRTwoA/edit#heading=h.xwsgm08djbc9) meeting.
+*   Feb 8 - John will be attending [ActicCon](https://arctic-con.com/sponsor/fbk2024/arcticcon_fairbanks_2024) (in Fairbanks) 
 
-*   With travel to Virginia Dec 14-28.
-*   John can likely be available (remotely) for urgent meeting / items as needed.
+InfoSec Highlight
+-----------------
 
-Proposals
----------
-
-Created [ACEP Infosec Funding Opportunities](https://docs.google.com/spreadsheets/d/1XUEOO-5r3Y0int0UvL6Sl5Hm4du5VVy7ljVGAeQAp80/edit#gid=0) Google Spreadsheet to track funding opportunities and status tracking.",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Normal,Normal,Administrative,False,0,,,[],0,2023-09-15 18:23:13.651958+00:00,2023-11-23 02:08:21.565146+00:00,,,
+*   Started drafting a UA compatible [ACEP Information Security Plan](https://docs.google.com/document/d/16rQOPxhcDZJ9G4x406v5vSqxUEBzqnGLtPi8tRi4PX4/edit) for review by ACEP Administration and other ACEP stakeholders.  This document should be ready for internal review by March 1.",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Normal,Normal,Administrative,False,0,,,[],0,2023-09-15 18:23:13.651958+00:00,2024-01-13 01:26:04.706482+00:00,,,
 1660029,41,2023-09-14 ARCTIC Site Visit,"Hi all,
 
 [2023 ARCTIC site visit - Daily Agenda](https://docs.google.com/document/d/1Iidyy5RYRzK51SJO79NJb24139Vqafu8qd5olXnrZyA/edit?usp=sharing)
@@ -5103,7 +5101,7 @@ Infosec Notes
 *   Update to Provost Council on UAF Cyber-security Plan
 *   Talk with Aaron Menshouse
 *   Develop List of Software for ACEP
-*   Andrew Miles / Nathan Green",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,New,Normal,Normal,Meeting,False,0,,,[],0,2023-11-27 20:00:48.060300+00:00,2023-11-27 20:54:16.755279+00:00,,,
+*   Andrew Miles / Nathan Green",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Closed,Normal,Normal,Meeting,True,0,,,[],0,2023-11-27 20:00:48.060300+00:00,2024-01-13 01:12:22.050496+00:00,2024-01-13 01:12:22.053831+00:00,,
 1690285,243,FERPA Training,"Hello everyone,
 
   
@@ -5317,21 +5315,21 @@ Alaska Center for Energy and Power
 University of Alaska Fairbanks
 
 [uaf.edu/acep](http://uaf.edu/acep)",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Closed,Normal,Normal,Documentation,True,0,,"infosec,acep",[557887],0,2024-01-03 18:15:28.271907+00:00,2024-01-08 18:00:10.089681+00:00,2024-01-08 18:00:10.094085+00:00,2024-01-29,
-1705486,254,OLLI Class - Cybersecurity for Seniors,https://docs.google.com/document/d/1mdZ1G0JeqAz7bBYd9c-Q2VWEA2-flHonLALEgNnbPU4/edit#heading=h.r7m2blu4f8i,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Normal,Normal,Training,False,0,,"infosec,uaf",[],0,2024-01-03 18:16:28.584475+00:00,2024-01-03 21:42:16.224559+00:00,,,
-1705489,255,Software Security Evaluations,"[https://discord.com/channels/@me/1153759371080257567/1187846744915067083](https://discord.com/channels/@me/1153759371080257567/1187846744915067083)
+1705486,254,OLLI Class - Cybersecurity for Seniors,"> John is co-teaching an OLLI class with Jeannette Okinczyc (OIT Security Ops Manager) on [Cybersecurity for Seniors](https://docs.google.com/document/d/1mdZ1G0JeqAz7bBYd9c-Q2VWEA2-flHonLALEgNnbPU4/edit#heading=h.r7m2blu4f8i).  (Fri 3:34-5:00pm  Mar 22,29, Apr 5, 12)
+
+[https://docs.google.com/document/d/1mdZ1G0JeqAz7bBYd9c-Q2VWEA2-flHonLALEgNnbPU4/edit#heading=h.r7m2blu4f8i](https://docs.google.com/document/d/1mdZ1G0JeqAz7bBYd9c-Q2VWEA2-flHonLALEgNnbPU4/edit#heading=h.r7m2blu4f8i)",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Important,Normal,Training,False,0,,"infosec,uaf",[],0,2024-01-03 18:16:28.584475+00:00,2024-01-13 01:20:59.173173+00:00,,,
+1705489,255,Software Security Evaluations,"> Set up a meeting with OIT (Thur Jan 19) to meet with Data Team and discuss Software Security Review process as well as other OIT Security Alignment considerations.
+
+[https://discord.com/channels/@me/1153759371080257567/1187846744915067083](https://discord.com/channels/@me/1153759371080257567/1187846744915067083)
 
 Software Catalog
 
-[https://service.alaska.edu/TDClient/39/Portal/KB/ArticleDet?ID=1589](https://service.alaska.edu/TDClient/39/Portal/KB/ArticleDet?ID=1589)",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Critical,Urgent,Task,False,0,,"infosec,uaf,oit",[],0,2024-01-03 18:28:10.291146+00:00,2024-01-08 18:55:15.920655+00:00,,,
-1705534,256,Review ACEP Infosec Interships,"\[Happy New Year, folks. Bumping to the top of your inbox!\]
+[https://service.alaska.edu/TDClient/39/Portal/KB/ArticleDet?ID=1589](https://service.alaska.edu/TDClient/39/Portal/KB/ArticleDet?ID=1589)",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Important,High,Task,False,0,,"infosec,uaf,oit,devops,ci",[],0,2024-01-03 18:28:10.291146+00:00,2024-01-13 00:58:12.287282+00:00,,2024-01-18,
+1705534,256,ACEP Infosec Interships,"> Selected Intership candidates for interviews.  John will be mentoring 2 [ACEP interships](https://www.uaf.edu/acep/education-workforce-development/summer-internship-program/apply-for-internship.php).
 
-  
- 
+\[Happy New Year, folks. Bumping to the top of your inbox!\]
 
 Applications are still open for the internship program until January 8. However, we already have 50+ applications that have been submitted, and every project has applicants! This would be a great time to start combing through the applications, as we will need your final top 3 interview choices by January 12.
-
-  
- 
 
 **Now:** browse applicants-- they will continue to populate as they are submitted. I have a ""notepad"" set up on your project page so you can take notes on applicants as you read them.
 
@@ -5339,21 +5337,12 @@ Applications are still open for the internship program until January 8. However,
 
 **End of January-mid Feb:** Patty and I will be scheduling interviews.
 
-  
- 
-
 FIRST!! Please watch this [6 minute video](https://drive.google.com/file/d/1gFoxWr9UPdTua1-GOXWqAVUtCxIT-1_B/view?usp=sharing) where I walk through the different pieces of the interface and the process for submitting your interview choices. It's pretty much the same as last year, but there is a new process for submitting your final selections. You can listen to it at double time and hear Chipmunk Annalise cruise through it in 3 minutes if that's all the time you have.
-
-  
- 
 
 Then you can head over to the [interface](https://airtable.com/invite/l?inviteId=invhUDAR6lmdPQyCC&inviteToken=5327c0f0a7ae9905012d88fcac6904f5d02c480783ca0f124f0667c7bb9b8197&utm_medium=email&utm_source=product_team&utm_content=transactional-alerts). If you haven't made an Airtable account before, you'll need to do that through your UAF account. Let me know if you have any questions.
 
-  
- 
-
-Thanks!",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,New,Normal,High,Task,False,0,,acep,[],0,2024-01-03 21:41:19.029057+00:00,2024-01-03 21:41:43.967422+00:00,,,
-1705536,257,RunZero Trail,,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Paused,Normal,Normal,Training,False,0,,sbx,[],0,2024-01-03 21:43:32.142066+00:00,2024-01-03 21:44:20.508882+00:00,,,
+Thanks!",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Important,High,Task,False,0,,"acep,workforce development",[],0,2024-01-03 21:41:19.029057+00:00,2024-01-13 01:01:02.555268+00:00,,2024-01-12,
+1705536,257,RunZero Trail,> Demonstrating Capabilities of [RunZero](https://www.runzero.com/) Network Device Discovery and Vulnerability detection tool.,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Normal,Normal,Training,False,0,,sbx,[],0,2024-01-03 21:43:32.142066+00:00,2024-01-13 01:15:40.748771+00:00,,,
 1705538,258,Yubikey Order #2,,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,New,Normal,Normal,Procurement,False,0,,acep,[],0,2024-01-03 21:52:11.577141+00:00,2024-01-03 21:52:11.596914+00:00,,,
 1705544,259,2024-01 Monthly Reading,"Infosec Articles
 ----------------
@@ -5370,7 +5359,7 @@ Events
 ------
 
 *   [https://www.nist.gov/news-events/events/nist-secure-software-development-framework-generative-ai-and-dual-use-foundation](https://www.nist.gov/news-events/events/nist-secure-software-development-framework-generative-ai-and-dual-use-foundation)
-*   [https://arctic-con.com/sponsor/fbk2024/arcticcon\_fairbanks\_2024](https://arctic-con.com/sponsor/fbk2024/arcticcon_fairbanks_2024)",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,New,Normal,Normal,Reading,False,0,,,[],0,2024-01-03 22:05:26.254019+00:00,2024-01-10 22:37:54.326560+00:00,,,
+*   [https://arctic-con.com/sponsor/fbk2024/arcticcon\_fairbanks\_2024](https://arctic-con.com/sponsor/fbk2024/arcticcon_fairbanks_2024)",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Normal,Normal,Reading,False,0,,,[],0,2024-01-03 22:05:26.254019+00:00,2024-01-13 00:50:35.908215+00:00,,,
 1705546,260,Discord Auto Updater,"[https://dl.discordapp.net/apps/linux/0.0.39/discord-0.0.39.deb](https://dl.discordapp.net/apps/linux/0.0.39/discord-0.0.39.deb)
 
 [https://discord.com/api/download?platform=linux&format=deb](https://discord.com/api/download?platform=linux&format=deb)
@@ -5413,7 +5402,7 @@ else
     echo ""Obsidian is up-to-date (version $INSTALLED_VERSION).""
 fi
 ```",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Normal,Normal,Coding,False,0,,code,[],0,2024-01-04 00:20:11.605168+00:00,2024-01-04 00:21:57.727048+00:00,,,
-1705953,263,Draft ACEP Information Security Plan,,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,New,Normal,High,Policy,False,0,,"acep,infosec",[],0,2024-01-04 17:57:43.973870+00:00,2024-01-04 17:57:43.993776+00:00,,,
+1705953,263,ACEP Information Security Plan,> Drafting a UA compatible [ACEP Information Security Plan](https://docs.google.com/document/d/16rQOPxhcDZJ9G4x406v5vSqxUEBzqnGLtPi8tRi4PX4/edit) for review by ACEP Administration and other ACEP stateholders. This document will be a work in progress for a months early in 2024.,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Important,High,Policy,False,0,,"acep,infosec",[557887],0,2024-01-04 17:57:43.973870+00:00,2024-01-13 01:13:22.240570+00:00,,2024-02-29,
 1705982,264,URGENT - Action needed- Third-party emailing services InboxSearch for all messages with label InboxRemove label Inbox from this conversation,"John and Yuri,
 
 This came to me from University relations. I know that the storytelling team uses [Constant Contact](https://www.constantcontact.com/), but I am not sure of other 3rd party platforms that we use at ACEP. Do you know any others?
@@ -5483,13 +5472,7 @@ Fax: (907) 474 5475",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,C
 *   How resilient is the service?",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Closed,Normal,Normal,Meeting,True,0,,,[557887],0,2024-01-04 22:02:56.896017+00:00,2024-01-04 23:00:08.960188+00:00,2024-01-04 23:00:08.964353+00:00,2024-01-04,
 1706007,266,ArcticCon Fairbanks 2024,"> Registerd for [ActicCon](https://arctic-con.com/sponsor/fbk2024/arcticcon_fairbanks_2024) (in Fairbanks) February 08, 2024 | 9am - 5pm AKDT at the Westmark.
 
-[https://arctic-con.com/sponsor/fbk2024/arcticcon\_fairbanks\_2024](https://arctic-con.com/sponsor/fbk2024/arcticcon_fairbanks_2024)
-
-Location Westmark Fairbanks
-
-Address 813 Noble St
-
-Time February 08, 2024 | 9am - 5pm AKDT",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Paused,Important,Normal,Meeting,False,0,,,[557887],0,2024-01-04 23:29:03.126641+00:00,2024-01-08 18:34:33.617384+00:00,,2024-02-08,
+[https://arctic-con.com/sponsor/fbk2024/arcticcon\_fairbanks\_2024](https://arctic-con.com/sponsor/fbk2024/arcticcon_fairbanks_2024)",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Paused,Important,Normal,Meeting,False,0,,"acep,infosec",[557887],0,2024-01-04 23:29:03.126641+00:00,2024-01-13 01:31:38.189542+00:00,,2024-02-08,
 1706375,267,Setup Desktop for Liz,"*   [x] Ubuntu
 *   [x] KMV Win 11
 *   [x] Docker
@@ -5515,4 +5498,41 @@ Time February 08, 2024 | 9am - 5pm AKDT",,,,,jehaverlack,John Haverlack,jehaverl
 
 Protecting Controlled Unclassified Information in Nonfederal Systems and Organizations",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Normal,Normal,Reading,False,0,,infosec,[],0,2024-01-08 23:04:15.118301+00:00,2024-01-08 23:06:15.894409+00:00,,,
 1708593,269,Demo Taiga for Liz,,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Closed,Normal,Normal,Training,True,0,,"acep,data",[],0,2024-01-11 17:47:31.811041+00:00,2024-01-11 20:33:11.104481+00:00,2024-01-11 20:33:11.107970+00:00,2024-01-11,
-1708666,273,Funding: Up to $70M to Address Cyber Hazards,"> **Funding: Up to $70M to Address Cyber Hazards** This week the Department of Energy [**announced**](https://www.energy.gov/articles/doe-announces-70-million-strengthen-energy-sector-against-physical-and-cyber-hazards?utm_medium=email&utm_source=govdelivery) up to $70 million in competitive funding to support research into technologies designed to increase resilience and reduce risks to energy delivery infrastructure from a variety of hazards, including cyber and physical threats, natural disasters, and climate-change fueled extreme weather events.",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,New,Important,High,Proposal,False,0,,"acep,infosec",[],0,2024-01-11 22:25:38.251140+00:00,2024-01-11 22:26:01.615132+00:00,,,
+1708666,273,Funding: Up to $70M to Address Cyber Hazards,"> **Funding: Up to $70M to Address Cyber Hazards** This week the Department of Energy [**announced**](https://www.energy.gov/articles/doe-announces-70-million-strengthen-energy-sector-against-physical-and-cyber-hazards?utm_medium=email&utm_source=govdelivery) up to $70 million in competitive funding to support research into technologies designed to increase resilience and reduce risks to energy delivery infrastructure from a variety of hazards, including cyber and physical threats, natural disasters, and climate-change fueled extreme weather events. Tracking at [ACEP Infosec Funding Opportunities](https://docs.google.com/spreadsheets/d/1XUEOO-5r3Y0int0UvL6Sl5Hm4du5VVy7ljVGAeQAp80/edit#gid=0) .
+
+Created [ACEP Infosec Funding Opportunities](https://docs.google.com/spreadsheets/d/1XUEOO-5r3Y0int0UvL6Sl5Hm4du5VVy7ljVGAeQAp80/edit#gid=0) Google Spreadsheet to track funding opportunities and status tracking.",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Important,High,Proposal,False,0,,"acep,infosec",[],0,2024-01-11 22:25:38.251140+00:00,2024-01-13 01:02:31.967904+00:00,,,
+1708671,274,2024-01-11 ARCTIC Shield,"> Potential parnership with [ARCTIC Shield](https://www.arcticshield.org/),  [AKDevAliance](https://www.akdevalliance.com/), and [T3](https://t3.alaska.edu) on Cybersecurity Workforce Development
+
+Attendees
+---------
+
+*   Adam Low
+*   John Haverlack
+*   Dayne Broderson
+*   Andre Andrews
+*   Clark O. Logan
+
+Agenda
+------
+
+*   Alaska Innovation Aliance
+*   [https://www.akdevalliance.com/](https://www.akdevalliance.com/)
+*   [https://t3.alaska.edu/](https://t3.alaska.edu/)
+*   [https://www.linkedin.com/company/arcticshield](https://www.linkedin.com/company/arcticshield)
+*   [https://ms-cc.org/](https://ms-cc.org/)
+*   [https://www.uaf.edu/acep/education-workforce-development/summer-internship-program/apply-for-internship.php](https://www.uaf.edu/acep/education-workforce-development/summer-internship-program/apply-for-internship.php)
+*   [https://www.arcticshield.org/](https://www.arcticshield.org/)
+
+### ARCTIC Shield
+
+*   Software Development
+*   Game Expose, etc
+
+ACEP
+----
+
+*   Internships
+*   Cybersecurity for Seniors
+*   Cybersecurity Awareness
+*   Workforce Development",,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Closed,Normal,Normal,Meeting,True,0,,"infosec,workforce development",[],0,2024-01-11 23:03:22.317961+00:00,2024-01-13 00:50:24.231682+00:00,2024-01-13 00:50:24.235196+00:00,2024-01-11,
+1709185,275,ACEP CyberData Team Meeting,> Preparing [Slides](https://docs.google.com/presentation/d/11RPHfr-H2P9u9Z4kqPOovgKqJS1CogmCWtfFAXJsRBg/edit#slide=id.g2ad7e93e011_0_0) and [Agenda](https://docs.google.com/document/d/145OYLIaAVBP9h_UNZokvTaeMcutqaan9NCLAVnRTwoA/edit#heading=h.xwsgm08djbc9) for this week long All Team Meeting.,,,,,jehaverlack,John Haverlack,jehaverlack,John Haverlack,Open,Important,High,Meeting,False,0,,"acep,data,devops,infosec,ci",[],0,2024-01-13 00:52:39.419962+00:00,2024-01-13 00:53:34.956007+00:00,,2024-01-16,
